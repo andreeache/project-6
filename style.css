@@ -1,8 +1,127 @@
-:root{
-    --color-primary: #901c1c;
-    --font-color-primary: #BF5138;
-    --color-secondary: #D3573C;
-    --color-secondary-bg: #525252;
-    --grey-font: #FAFAFA;
-    --font-color-secondary: #901c1c;
+:root {
+  --color-primary: #901c1c;
+  --font-color-primary: #bf5138;
+  --color-secondary: #d3573c;
+  --color-secondary-bg: #525252;
+  --grey-font: #fafafa;
+  --font-color-secondary: #901c1c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 20px 40px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: 200px;
+  margin-top: 20px;
+  margin-left: 10px;
+  height: auto;
+}
+
+.home {
+  width: 200px;
+  height: auto;
+}
+
+navigation {
+  margin-top: 20px;
+}
+
+.filter {
+  color: var(--font-color-primary);
+  padding: 5px;
+  border-radius: 10px;
+  background-color: white;
+  border: solid 1px var(--color-secondary-bg);
+  margin-top: 5px;
+}
+h1 {
+  color: var(--color-primary);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 80px;
+  margin-top: 60px;
+}
+
+.photographer-card {
+  display: flex;
+  margin: 20px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.photographer-main {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  justify-content: center;
+  align-content: center;
+}
+
+.front-photo {
+  align-self: center;
+}
+.front-photo img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.photographer-name {
+  color: var(--font-color-primary);
+  font-size: 40px;
+  align-self: center;
+}
+
+.photograger-details {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  justify-content: center;
+  align-content: center;
+}
+
+.location {
+  text-align: center;
+}
+
+.despcription {
+  text-align: center;
+}
+
+.price {
+  text-align: center;
+}
+
+.photographer-categories {
+  position: relative;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.button-center {
+  position: absolute;
+  margin: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
