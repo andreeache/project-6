@@ -353,6 +353,13 @@ li {
   color: black;
 }
 
+
+.media-items {
+    width: auto;
+    display: flex;
+    align-items: center;
+  justify-content: center;
+}
 .media-select-menu {
   position: relative;
   align-self: flex-start;
@@ -381,6 +388,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  
 }
 
 @media screen and (max-width: 768px) {

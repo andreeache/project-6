@@ -197,8 +197,33 @@
             </div>
         </div>
 
-
-
+<!-- contact form -->
+<div class="bground">
+    <div class="content">
+        <span class="close"></span>
+        <div class="modal-body">
+            <form  name="contactform" action="index.html" method="get" onsubmit="return validateForm();">
+                <div class="formData">
+                    <label for="first"> First Name</label>
+                    <input class="text-control" type="text" id="first" name="first">
+                </div>
+                <div class="formData">
+                    <label for="last">Last Name</label>
+                   <input type="text" class="class-control" id="last" name="last">
+                </div>
+                <div class="formData">
+                    <label for="email">Email</label>
+                    <input type="text" class="class-control" id="email" name="email">
+                </div>
+                <div class="formData">
+                    <label for="message">Your message</label>
+                    <input type="text" class="class-control" id="message" name="message">
+                </div>
+                <input class="btn-submit" type="submit" class="button" value="Send" />
+            </form>
+        </div>
+    </div>
+</div>
 
     </main>
     <script src="script.js"></script>
