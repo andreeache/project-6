@@ -22,7 +22,7 @@
         </header>
 
 
-        <main class="main-page">
+        <main class="main-section">
             <div class="photographer-info">
                 <div class="info-details">
                 <!-- photographer name on photographer page -->
@@ -52,8 +52,12 @@
 
             <div class="media-items">
                 <div class="media-select-menu">
-                <div>Order by</div>
-                <div>Drop-down menu</div>
+                <div id="orderby">Order by</div>
+                <select class="dropdown-btn">
+                    <option value="0">Popularity</option>
+                    <option value="1">Date</option>
+                    <option value="2">Title</option>
+                </select>
             </div>
             <div class="portofolio">
             <div class="photo-card">
@@ -61,9 +65,14 @@
                     <source srcset="Sample Photos-2/Mimi/Animals_Rainbow.jpg">
                       <img alt="Rainbow Bird" src="Sample Photos-2/Mimi/Animals_Rainbow.jpg">
                 </picture>
+                <div class="photo-card-details">
                 <div class="photo-description">Rainbow Bird</div>
                 <div class="photo-price">70 $</div>
+                <div class="like">
+                    <div class="number-of-likes">12</div>
                 <i class="fa fa-heart"></i>
+                </div>
+            </div>
             </div>
 
             <div class="photo-card">
@@ -76,7 +85,7 @@
                 <div class="photo-price">70 $</div>
                 <div class="like">
                 <div class="number-of-likes">12</div>
-                <i class="fa fa-heart"></i>
+                <i class="fa fa-heart like-icon"></i>
             </div>
             </div>
             </div>
@@ -86,9 +95,14 @@
                     <source srcset="Sample Photos-2/Mimi/Event_BenevidesWedding.jpg">
                       <img alt="Wedding photo" src="Sample Photos-2/Mimi/Event_BenevidesWedding.jpg" >
                 </picture>
+                <div class="photo-card-details">
                 <div class="photo-description">Benevides Wedding</div>
                 <div class="photo-price">70 $</div>
+                <div class="like">
+                    <div class="number-of-likes">12</div>
                 <i class="fa fa-heart"></i>
+                </div>
+            </div>
             </div>
 
             <div class="photo-card">
@@ -96,9 +110,14 @@
                     <source srcset="Sample Photos-2/Mimi/Event_PintoWedding.jpg">
                       <img alt="Wedding photo" src="Sample Photos-2/Mimi/Event_PintoWedding.jpg" >
                 </picture>
+                <div class="photo-card-details">
                 <div class="photo-description">Pinto Wedding</div>
                 <div class="photo-price">70 $</div>
+                <div class="like">
+                    <div class="number-of-likes">12</div>
                 <i class="fa fa-heart"></i>
+                </div>
+            </div>
             </div>
 
             <div class="photo-card">
@@ -106,9 +125,14 @@
                     <source srcset="Sample Photos-2/Mimi/Event_SeasideWedding.jpg">
                       <img alt="Seaside wedding photo" src="Sample Photos-2/Mimi/Event_SeasideWedding.jpg" >
                 </picture>
+                <div class="photo-card-details">
                 <div class="photo-description">Seaside Wedding</div>
                 <div class="photo-price">70 $</div>
+                <div class="like">
+                    <div class="number-of-likes">12</div>
                 <i class="fa fa-heart"></i>
+                </div>
+            </div>
             </div>
 
             <div class="photo-card">
@@ -116,14 +140,26 @@
                     <source srcset="Sample Photos-2/Mimi/Portrait_Background.jpg">
                       <img alt="Black and white portrait" src="Sample Photos-2/Mimi/Portrait_Background.jpg" >
                 </picture>
-                <div class="photo-description"></div>
+                <div class="photo-card-details">
+                <div class="photo-description">Portrait Background</div>
                 <div class="photo-price">70 $</div>
+                <div class="like">
+                    <div class="number-of-likes">12</div>
                 <i class="fa fa-heart"></i>
+                </div>
+            </div>
             </div>
         </div>
 
             </div>
-
+            <div class="fixed-info-box">
+                <div class="like">
+                    <div class="number-of-likes">297-081</div>
+                <i class="fa fa-heart"></i>
+                </div>
+                <!-- price-pp price in the photographer page -->
+                <div class="price-pp">300$ / Day</div>
+            </div>
         </main>
 
     <script src="script.js"></script>
