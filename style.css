@@ -353,11 +353,10 @@ li {
   color: black;
 }
 
-
 .media-items {
-    width: auto;
-    display: flex;
-    align-items: center;
+  width: auto;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 .media-select-menu {
@@ -384,15 +383,14 @@ li {
   color: var(--grey-font);
   font: 18px;
 }
-.portofolio {
+.portfolio {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  
 }
 
 @media screen and (max-width: 768px) {
-  .portofolio {
+  .portfolio {
     flex-direction: column;
   }
 }
@@ -467,7 +465,7 @@ li {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-  justify-content: center;
+    justify-content: center;
     background-color: var(--font-color-secondary);
     color: var(--grey-font);
     width: 170px;
@@ -480,4 +478,191 @@ li {
     border-radius: 5px;
     border: 0px;
   }
+
+  .fixed-contact:hover {
+    background-color: var(--color-secondary);
+    cursor: pointer;
+    color: black;
+  }
+}
+
+/* styling contact form modal */
+
+.bground {
+  background-color: #db8876;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+
+.modal-title {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+  font-size: 64px;
+}
+
+@media screen and (max-width: 768px) {
+    .modal-title {
+        font-size: 36px;
+    }
+}
+
+.modal-photographer-name {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+  font-size: 64px;
+}
+
+@media screen and (max-width: 768px) {
+    .modal-photographer-name {
+        font-size: 36px;
+    }
+}
+
+.modal-text {
+  color: #312e2e;
+  font-size: 36px;
+  font-family: DM Sans;
+font-style: normal;
+font-weight: normal;
+}
+
+@media screen and (max-width: 768px) {
+    .modal-text {
+        font-size: 24px;
+    }
+}
+
+
+
+.form-button {
+  background-color: var(--font-color-secondary);
+  color: var(--grey-font);
+  width: 170px;
+  height: 69px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 0px;
+  margin-top: 10px;
+}
+
+.form-button:hover {
+  background-color: var(--color-secondary);
+  cursor: pointer;
+  color: black;
+}
+
+.bground {
+  /* display: none; */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: #fff;
+}
+
+.content {
+  margin: 5% auto;
+  width: 100%;
+  max-width: 700px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background: var(--color-secondary);
+  border-radius: 5px;
+  position: relative;
+  color: #fff;
+  padding-top: 10px;
+  
+}
+
+.modal-body {
+  padding: 15px 8%;
+  margin: 15px auto;
+  width: auto;
+}
+
+label {
+  font-size: 17px;
+  font-weight: normal;
+  display: inline-block;
+  margin-bottom: 11px;
+}
+input {
+  padding: 8px;
+  border: 0.8px solid #ccc;
+  outline: none;
+}
+
+.formData {
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 10px; */
+  margin-top: 10px;
+  align-content: center;
+}
+
+.form-control small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+.text-control {
+  height: 68px;
+}
+
+@media screen and (max-width: 768px) {
+    .text-control {
+        height: 52px;
+    }
+}
+
+#message {
+  height: 170px;
+}
+
+@media screen and (max-width: 768px) {
+    #message {
+        height: 184px;
+    }
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(0.7);
+}
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 3px;
+  background-color: #fff;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
 }
