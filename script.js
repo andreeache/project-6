@@ -77,7 +77,9 @@ function validateForm(){
       } else {
         message.parentNode.removeAttribute("data-error-visible");
       } 
-  
+      if (!isFormValid) {
+        return false;
+      }
     
   
 }
