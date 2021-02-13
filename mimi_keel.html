@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <button class="active btn contact modal-btn">Contact me</button>
-                
+
             </div>
             <picture class="front-photo photo-right-aligned">
                 <source srcset="Sample Photos-2/Photographers ID Photos/MimiKeel.jpg">
@@ -65,7 +65,8 @@
                 <div class="photo-card">
                     <picture class="photo">
                         <source srcset="Sample Photos-2/Mimi/Animals_Rainbow.jpg">
-                        <img alt="Rainbow Bird" src="Sample Photos-2/Mimi/Animals_Rainbow.jpg">
+                        <img alt="Rainbow Bird" src="Sample Photos-2/Mimi/Animals_Rainbow.jpg"
+                            onclick="openLightbox();currentSlide(1)" class="hover-shadow cursor">
                     </picture>
                     <div class="photo-card-details">
                         <div class="photo-description">Rainbow Bird</div>
@@ -80,7 +81,8 @@
                 <div class="photo-card">
                     <picture class="photo">
                         <source srcset="Sample Photos-2/Mimi/Travel_Lonesome.jpg">
-                        <img alt="Scenary photo" src="Sample Photos-2/Mimi/Travel_Lonesome.jpg">
+                        <img alt="Scenary photo" src="Sample Photos-2/Mimi/Travel_Lonesome.jpg"
+                            onclick="openLightbox();currentSlide(2)" class="hover-shadow cursor">
                     </picture>
                     <div class="photo-card-details">
                         <div class="photo-description">Lonesome</div>
@@ -95,7 +97,8 @@
                 <div class="photo-card">
                     <picture class="photo">
                         <source srcset="Sample Photos-2/Mimi/Event_BenevidesWedding.jpg">
-                        <img alt="Wedding photo" src="Sample Photos-2/Mimi/Event_BenevidesWedding.jpg">
+                        <img alt="Wedding photo" src="Sample Photos-2/Mimi/Event_BenevidesWedding.jpg"
+                            onclick="openLightbox();currentSlide(3)" class="hover-shadow cursor">
                     </picture>
                     <div class="photo-card-details">
                         <div class="photo-description">Benevides Wedding</div>
@@ -110,7 +113,8 @@
                 <div class="photo-card">
                     <picture class="photo">
                         <source srcset="Sample Photos-2/Mimi/Event_PintoWedding.jpg">
-                        <img alt="Wedding photo" src="Sample Photos-2/Mimi/Event_PintoWedding.jpg">
+                        <img alt="Wedding photo" src="Sample Photos-2/Mimi/Event_PintoWedding.jpg"
+                            onclick="openLightbox();currentSlide(4)" class="hover-shadow cursor">
                     </picture>
                     <div class="photo-card-details">
                         <div class="photo-description">Pinto Wedding</div>
@@ -124,7 +128,8 @@
 
                 <div class="photo-card">
                     <picture class="photo">
-                        <source srcset="Sample Photos-2/Mimi/Event_SeasideWedding.jpg">
+                        <source srcset="Sample Photos-2/Mimi/Event_SeasideWedding.jpg"
+                            onclick="openLightbox();currentSlide(5)" class="hover-shadow cursor">
                         <img alt="Seaside wedding photo" src="Sample Photos-2/Mimi/Event_SeasideWedding.jpg">
                     </picture>
                     <div class="photo-card-details">
@@ -139,7 +144,8 @@
 
                 <div class="photo-card">
                     <picture class="photo">
-                        <source srcset="Sample Photos-2/Mimi/Portrait_Background.jpg">
+                        <source srcset="Sample Photos-2/Mimi/Portrait_Background.jpg"
+                            onclick="openLightbox();currentSlide(6)" class="hover-shadow cursor">
                         <img alt="Black and white portrait" src="Sample Photos-2/Mimi/Portrait_Background.jpg">
                     </picture>
                     <div class="photo-card-details">
@@ -165,6 +171,43 @@
 
         <button class="fixed-contact modal-btn">Contact me</button>
 
+        <!-- lightbox modal -->
+
+        <div class="lightbox" id="myLightbox">
+            <span class="close cursor" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-content">
+
+                <div class="lightboxSlides">
+                    <img alt="Rainbow Bird" src="Sample Photos-2/Mimi/Animals_Rainbow.jpg" style="width: 100%;">
+                </div>
+                <div class="lightboxSlides">
+                    <img alt="Scenary photo" src="Sample Photos-2/Mimi/Travel_Lonesome.jpg" style="width: 100%;">
+                </div>
+                <div class="lightboxSlides">
+                    <img alt="Wedding photo" src="Sample Photos-2/Mimi/Event_BenevidesWedding.jpg" style="width: 100%;">
+                </div>
+                <div class="lightboxSlides">
+                    <img alt="Wedding photo" src="Sample Photos-2/Mimi/Event_PintoWedding.jpg" style="width: 100%;">
+                </div>
+                <div class="lightboxSlides">
+                    <img alt="Seaside wedding photo" src="Sample Photos-2/Mimi/Event_SeasideWedding.jpg"
+                        style="width: 100%;">
+                </div>
+                <div class="lightboxSlides">
+                    <img alt="Black and white portrait" src="Sample Photos-2/Mimi/Portrait_Background.jpg"
+                        style="width: 100%;">
+                </div>
+                <!-- Next/previous controls -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <!-- Caption text -->
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+            </div>
+        </div>
+
         <!-- contact form -->
         <div class="bground">
             <div class="content">
@@ -172,12 +215,12 @@
                 <div class="modal-body">
                     <div class="modal-title">Contact me</div>
                     <div class="modal-photographer-name">Mimi Keel</div>
-                    <form name="contactform" id="contactform"  method="get" onsubmit="return validateForm();">
+                    <form name="contactform" id="contactform" method="get" onsubmit="return validateForm();">
                         <div class="formData" data-error="Please enter 2+ characters for name field">
                             <label class="modal-text" for="first"> First Name</label>
                             <input class="text-control" type="text" id="first" name="first">
                         </div>
-                        <div class="formData"data-error="Please enter 2+ characters for name field">
+                        <div class="formData" data-error="Please enter 2+ characters for name field">
                             <label class="modal-text" for="last">Last Name</label>
                             <input type="text" class="text-control" id="last" name="last">
                         </div>

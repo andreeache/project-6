@@ -80,6 +80,15 @@ function validateForm(){
       if (!isFormValid) {
         return false;
       }
-    
-  
 }
+
+// lightbox
+
+// Open the lightbox modal
+function openLightbox() {
+    document.getElementById("myLightbox").style.display = "block";
+  }
+
+  function closeLightbox() {
+      document.getElementById("myLightbox").style.display = none;
+  }
