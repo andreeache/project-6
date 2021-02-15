@@ -55,11 +55,14 @@
         <div class="media-items">
             <div class="media-select-menu">
                 <div id="orderby">Order by</div>
-                <select class="dropdown-btn">
+                <div class="dropdown-select">
+                <select>
                     <option value="0">Popularity</option>
-                    <option value="1">Date</option>
-                    <option value="2">Title</option>
+                    <option value="0">Popularity</option>
+                    <option value="0">Date</option>
+                    <option value="0">Title</option>
                 </select>
+            </div>
             </div>
             <div class="portfolio">
                 <div class="photo-card">
@@ -229,6 +232,7 @@
                         <div class="formData" data-error="Please enter 2+ characters for message field">
                             <label class="modal-text" for="message">Your message</label>
                             <textarea id="message" name="message" rows="4" cols="50"></textarea>
+
                         </div>
                         <input class="btn-submit form-button" type="submit" class="button" value="Send" />
                     </form>
