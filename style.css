@@ -396,67 +396,68 @@ li {
 /* here */
 
 .dropdown-select {
-    position: relative;
-    width: 170px;
-    font-size: 18px;
-    border-radius: 5px;
-  }
-  
+  position: relative;
+  width: 170px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
 /*hide original SELECT element: */
 .dropdown-select select {
-    display: none; 
-  }
-  
-  .select-selected {
-    background-color: #911C1C;
-  }
-  
-  /* Style the arrow inside the select element: */
-  .select-selected:after {
-    position: absolute;
-    content: "";
-    top: 14px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: #fff transparent transparent transparent;
-  }
-  
-  /* Point the arrow upwards when the select box is open (active): */
-  .select-selected.select-arrow-active:after {
-    border-color: transparent transparent #fff transparent;
-    top: 7px;
-  }
-  
-  /* style the items (options), including the selected item: */
-  .select-items div,.select-selected {
-    color: #ffffff;
-    padding: 8px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-    cursor: pointer;
-  }
-  
-  /* Style items (options): */
-  .select-items {
-    position: absolute;
-    background-color: #911C1C;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 99;
-  }
-  
-  /* Hide the items when the select box is closed: */
-  .select-hide {
-    display: none;
-  }
-  
-  .select-items div:hover, .same-as-selected {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
+  display: none;
+}
 
+.select-selected {
+  background-color: #911c1c;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: #911c1c;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
 .portfolio {
   display: flex;
@@ -575,6 +576,12 @@ li {
   background-color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+    .bground {
+        background-color: #DB8876;
+    }
+}
+
 .modal-title {
   font-family: DM Sans;
   font-style: normal;
@@ -656,7 +663,7 @@ li {
   max-width: 700px;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
-  background: var(--color-secondary);
+  background: #DB8876;
   border-radius: 5px;
   position: relative;
   color: #fff;
@@ -755,6 +762,7 @@ input[data-error]::after {
 #message {
   height: 170px;
   font-size: 18px;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -802,7 +810,14 @@ input[data-error]::after {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color:#fff;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .lightbox {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 }
 
 /* Lightbox modal Content */
@@ -817,12 +832,22 @@ input[data-error]::after {
 
 /* The Close Button */
 .closelightbox {
-  color: #911C1C;
+  color: #911c1c;
   position: absolute;
   top: 10px;
   right: 25px;
   font-size: 35px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .closelightbox {
+        position: absolute;
+        top: 14%;
+        right: 6px;
+        font-size: 28px;
+        font-weight: normal;
+    }
 }
 
 .closelightbox:hover,
@@ -832,21 +857,38 @@ input[data-error]::after {
   cursor: pointer;
 }
 
-/* Hide the slides by default */ 
+/* Hide the slides by default */
+
+
 
 .lightboxSlides {
   display: none;
-  
-  
 }
 
 .lightboxSlides img {
-    object-fit: scale-down ;
-    width: 100%;
-    height: 80vh;
-    padding-right: 40px;
-    padding-left: 40px;
-   
+  height: 80vh;
+  max-width: 95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+}
+
+.lightbox-text
+{
+    display: flex;
+    flex-wrap: wrap;
+    color: #911C1C;
+    font-size: 24px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .lightbox-text{
+        justify-content: flex-start;
+        padding-left: 9px;
+    }
 }
 
 /* Next & previous buttons */
@@ -858,14 +900,13 @@ input[data-error]::after {
   width: auto;
   padding: 16px;
   margin-top: -50px;
-  color: #911C1C;
+  color: #911c1c;
   font-weight: bold;
   font-size: 20px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
-  
 }
 
 /* Position the "next button" to the right */
@@ -874,17 +915,26 @@ input[data-error]::after {
   border-radius: 3px 0 0 3px;
 }
 
+@media screen and (max-width: 768px) {
+    .prev {
+        left: -8.5%;
+    }
+
+    .next {
+        right: -8.5%;
+    }
+}
 
 .prev,
 .next:hover {
-    color: #bf5138;
-    text-decoration: none;
-    cursor: pointer;
+  color: #bf5138;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .prev,
 .next:focus {
-    color: #bf5138;
-    text-decoration: none;
-    cursor: pointer;
+  color: #bf5138;
+  text-decoration: none;
+  cursor: pointer;
 }
