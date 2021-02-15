@@ -843,8 +843,8 @@ input[data-error]::after {
 @media screen and (max-width: 768px) {
     .closelightbox {
         position: absolute;
-        top: 14%;
-        right: 6px;
+        top: 90px;
+        right: 2vw;
         font-size: 28px;
         font-weight: normal;
     }
