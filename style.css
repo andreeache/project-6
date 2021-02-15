@@ -172,13 +172,11 @@ li {
 }
 
 @media screen and (max-width: 390px) {
-.front-photo img {
+  .front-photo img {
     width: 100px;
     height: 100px;
+  }
 }
-}
-
-
 
 .photographer-name {
   color: var(--font-color-primary);
@@ -258,7 +256,6 @@ li {
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
-  
 }
 
 @media screen and (max-width: 768px) {
@@ -270,7 +267,6 @@ li {
 
 .info-details {
   margin: 30px;
-  
 }
 
 @media screen and (max-width: 768px) {
@@ -330,13 +326,14 @@ li {
 @media screen and (max-width: 768px) {
   .photo-right-aligned {
     right: -20%;
-    top: 40%;}
+    top: 40%;
+  }
 
-    .photo-right-aligned img {
-        height: 150px;
-        width: 200px;
-    }
-  
+  .photo-right-aligned img {
+    height: 150px;
+    width: 200px;
+  }
+
   .photo-right-aligned img {
     width: 150px;
     height: 150px;
@@ -503,19 +500,17 @@ li {
 
 /* styling contact form modal */
 
-
 .bground {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    background-color: #fff;
-  }
-
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: #fff;
+}
 
 .modal-title {
   font-family: DM Sans;
@@ -526,9 +521,9 @@ li {
 }
 
 @media screen and (max-width: 768px) {
-    .modal-title {
-        font-size: 36px;
-    }
+  .modal-title {
+    font-size: 36px;
+  }
 }
 
 .modal-photographer-name {
@@ -540,34 +535,32 @@ li {
 }
 
 @media screen and (max-width: 768px) {
-    .modal-photographer-name {
-        font-size: 36px;
-    }
+  .modal-photographer-name {
+    font-size: 36px;
+  }
 }
 
 .modal-text {
   color: #312e2e;
   font-size: 36px;
   font-family: DM Sans;
-font-style: normal;
-font-weight: normal;
+  font-style: normal;
+  font-weight: normal;
 }
 
 @media screen and (max-width: 768px) {
-    .modal-text {
-        font-size: 24px;
-    }
+  .modal-text {
+    font-size: 24px;
+  }
 }
 
-
 @media screen and (max-width: 768px) {
-    form {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        width: 100%;
-        
-    }
+  form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
 
 .form-button {
@@ -582,10 +575,10 @@ font-weight: normal;
 }
 
 @media screen and (max-width: 768px) {
-    .form-button {
-      height: 35px;
-      align-self: center;
-    }
+  .form-button {
+    height: 35px;
+    align-self: center;
+  }
 }
 
 .form-button:hover {
@@ -593,7 +586,6 @@ font-weight: normal;
   cursor: pointer;
   color: black;
 }
-
 
 .content {
   margin: auto;
@@ -606,7 +598,6 @@ font-weight: normal;
   position: relative;
   color: #fff;
   padding-top: 10px;
-  
 }
 
 .modal-body {
@@ -627,22 +618,21 @@ font-weight: normal;
   outline: none;
 }
 
-.text-control input:focus{
-    outline: 0;
-    border-color: #777;
+.text-control input:focus {
+  outline: 0;
+  border-color: #777;
 }
 
-.text-control.success input{
-    border-color: var(--success-color);
+.text-control.success input {
+  border-color: var(--success-color);
 }
 
-.text-control.error input{
-    border-color: var(--error-color);
+.text-control.error input {
+  border-color: var(--error-color);
 }
 
 input {
-    font-size: 18px;
-    
+  font-size: 18px;
 }
 
 .formData {
@@ -653,29 +643,29 @@ input {
 }
 
 .formData[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.6em;
-    color: #fff;
-    display: block;
-    margin-top: 7px;
-    margin-bottom: 7px;
-    text-align: left;
-    line-height: 0.3;
-    opacity: 0;
-    transition: 0.3s;
-  }
-  .formData[data-error-visible="true"]::after {
-    opacity: 1;
-  }
-  .formData[data-error-visible="true"] .text-control {
-    border: 2px solid blue;
-  }
-  
-  input[data-error]::after {
-      content: attr(data-error);
-      font-size: 0.4em;
-      color: blue;
-  }
+  content: attr(data-error);
+  font-size: 0.6em;
+  color: #fff;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: left;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+}
+.formData[data-error-visible="true"]::after {
+  opacity: 1;
+}
+.formData[data-error-visible="true"] .text-control {
+  border: 2px solid blue;
+}
+
+input[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.4em;
+  color: blue;
+}
 
 .text-control small {
   color: var(--error-color);
@@ -694,19 +684,20 @@ input {
 }
 
 @media screen and (max-width: 768px) {
-    .text-control {
-        height: 52px;
-    }
+  .text-control {
+    height: 52px;
+  }
 }
 
 #message {
   height: 170px;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 768px) {
-    #message {
-        height: 184px;
-    }
+  #message {
+    height: 184px;
+  }
 }
 
 .close {
@@ -735,54 +726,64 @@ input {
   transform: rotate(-45deg);
 }
 
-
 /* Lightbox styling */
-
 
 /* The lightbox modal (background) */
 .lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: black;
-  }
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color:#fff;
+}
 
-  /* Lightbox modal Content */
+/* Lightbox modal Content */
 .lightbox-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    width: 90%;
-    max-width: 1200px;
-  }
-  
-  /* The Close Button */
-.close {
-    color: white;
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 35px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #999;
-    text-decoration: none;
-    cursor: pointer;
-  }
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
 
-  * Hide the slides by default */
+/* The Close Button */
+.closelightbox {
+  color: #911C1C;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.closelightbox:hover,
+.closelightbox:focus {
+  color: #bf5138;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */ 
+
 .lightboxSlides {
   display: none;
+  
+  
+}
+
+.lightboxSlides img {
+    object-fit: scale-down ;
+    width: 100%;
+    height: 80vh;
+    padding-right: 40px;
+    padding-left: 40px;
+   
 }
 
 /* Next & previous buttons */
@@ -794,16 +795,33 @@ input {
   width: auto;
   padding: 16px;
   margin-top: -50px;
-  color: white;
+  color: #911C1C;
   font-weight: bold;
   font-size: 20px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
+  
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+    color: #bf5138;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.prev,
+.next:focus {
+    color: #bf5138;
+    text-decoration: none;
+    cursor: pointer;
+}

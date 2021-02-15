@@ -83,12 +83,33 @@ function validateForm(){
 }
 
 // lightbox
+const myLightbox = document.getElementById("myLightbox");
+const myPhotos = document.getElementsByClassName("lightboxSlides");
+let currentPosition = 1;
 
 // Open the lightbox modal
 function openLightbox() {
-    document.getElementById("myLightbox").style.display = "block";
-  }
+    myLightbox.style.display = "block";
+}
 
-  function closeLightbox() {
-      document.getElementById("myLightbox").style.display = none;
-  }
+function closeLightbox() {
+    myLightbox.style.display = "none";
+}
+
+function currentSlide(n) {
+    for (i = 0; i < myPhotos.length; i++) {
+        if (i + 1 == n) {
+            myPhotos[i].style.display = "block";
+        } else {
+            myPhotos[i].style.display = "none";
+        }
+    }
+    currentPosition = n;
+}
+
+function plusSlides(n) {
+    let newPosition = currentPosition + n;
+    if (newPosition > 0 && newPosition <= myPhotos.length) {
+        currentSlide(newPosition);
+    }
+}

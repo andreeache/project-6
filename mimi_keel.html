@@ -128,9 +128,9 @@
 
                 <div class="photo-card">
                     <picture class="photo">
-                        <source srcset="Sample Photos-2/Mimi/Event_SeasideWedding.jpg"
+                        <source srcset="Sample Photos-2/Mimi/Event_SeasideWedding.jpg">
+                        <img alt="Seaside wedding photo" src="Sample Photos-2/Mimi/Event_SeasideWedding.jpg"
                             onclick="openLightbox();currentSlide(5)" class="hover-shadow cursor">
-                        <img alt="Seaside wedding photo" src="Sample Photos-2/Mimi/Event_SeasideWedding.jpg">
                     </picture>
                     <div class="photo-card-details">
                         <div class="photo-description">Seaside Wedding</div>
@@ -144,9 +144,9 @@
 
                 <div class="photo-card">
                     <picture class="photo">
-                        <source srcset="Sample Photos-2/Mimi/Portrait_Background.jpg"
+                        <source srcset="Sample Photos-2/Mimi/Portrait_Background.jpg">
+                        <img alt="Black and white portrait" src="Sample Photos-2/Mimi/Portrait_Background.jpg"
                             onclick="openLightbox();currentSlide(6)" class="hover-shadow cursor">
-                        <img alt="Black and white portrait" src="Sample Photos-2/Mimi/Portrait_Background.jpg">
                     </picture>
                     <div class="photo-card-details">
                         <div class="photo-description">Portrait Background</div>
@@ -174,28 +174,26 @@
         <!-- lightbox modal -->
 
         <div class="lightbox" id="myLightbox">
-            <span class="close cursor" onclick="closeLightbox()">&times;</span>
+            <span class="closelightbox cursor" onclick="closeLightbox()">&times;</span>
             <div class="lightbox-content">
 
                 <div class="lightboxSlides">
-                    <img alt="Rainbow Bird" src="Sample Photos-2/Mimi/Animals_Rainbow.jpg" style="width: 100%;">
+                    <img alt="Rainbow Bird" src="Sample Photos-2/Mimi/Animals_Rainbow.jpg">
                 </div>
                 <div class="lightboxSlides">
-                    <img alt="Scenary photo" src="Sample Photos-2/Mimi/Travel_Lonesome.jpg" style="width: 100%;">
+                    <img alt="Scenary photo" src="Sample Photos-2/Mimi/Travel_Lonesome.jpg">
                 </div>
                 <div class="lightboxSlides">
-                    <img alt="Wedding photo" src="Sample Photos-2/Mimi/Event_BenevidesWedding.jpg" style="width: 100%;">
+                    <img alt="Wedding photo" src="Sample Photos-2/Mimi/Event_BenevidesWedding.jpg">
                 </div>
                 <div class="lightboxSlides">
-                    <img alt="Wedding photo" src="Sample Photos-2/Mimi/Event_PintoWedding.jpg" style="width: 100%;">
+                    <img alt="Wedding photo" src="Sample Photos-2/Mimi/Event_PintoWedding.jpg">
                 </div>
                 <div class="lightboxSlides">
-                    <img alt="Seaside wedding photo" src="Sample Photos-2/Mimi/Event_SeasideWedding.jpg"
-                        style="width: 100%;">
+                    <img alt="Seaside wedding photo" src="Sample Photos-2/Mimi/Event_SeasideWedding.jpg">
                 </div>
                 <div class="lightboxSlides">
-                    <img alt="Black and white portrait" src="Sample Photos-2/Mimi/Portrait_Background.jpg"
-                        style="width: 100%;">
+                    <img alt="Black and white portrait" src="Sample Photos-2/Mimi/Portrait_Background.jpg">
                 </div>
                 <!-- Next/previous controls -->
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -230,7 +228,7 @@
                         </div>
                         <div class="formData" data-error="Please enter 2+ characters for message field">
                             <label class="modal-text" for="message">Your message</label>
-                            <input type="text" class="text-control" id="message" name="message">
+                            <textarea id="message" name="message" rows="4" cols="50"></textarea>
                         </div>
                         <input class="btn-submit form-button" type="submit" class="button" value="Send" />
                     </form>
