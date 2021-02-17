@@ -508,7 +508,7 @@ li {
  
 }
 
-@media screen and (max-width: 1024) {
+@media screen and (max-width: 1024px) {
     .photo-card {
         width: 50%;
     }
@@ -518,8 +518,15 @@ li {
   display: flex;
   color: var(--font-color-secondary);
   font-size: 24px;
-  /* width: 350px; */
+  width: 100%;
+
   justify-content: space-between;
+}
+
+@media screen and (max-width: 1024px) {
+.photo-card-details {
+    width: 350px;
+}
 }
 
 .photo-description {
@@ -546,7 +553,7 @@ li {
   background-color: #db8876;
   position: fixed;
   bottom: 0;
-  right: 1vw;
+  right: 3vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
