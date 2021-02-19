@@ -206,4 +206,4 @@ function loadCallback(text) {
   }
 }
 
-loadJson("/fisheyedata.json", loadCallback);
+loadJson("fisheyedata.json", loadCallback);
