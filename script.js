@@ -114,4 +114,96 @@ function plusSlides(n) {
     }
 }
 
+// load json
 
+function loadJson(file, callback) {
+  var rawFile = new XMLHttpRequest();
+  rawFile.overrideMimeType("application/json");
+  rawFile.open("GET", file, true);
+  rawFile.onreadystatechange = function () {
+    if (rawFile.readyState === 4 && rawFile.status == "200") {
+      callback(rawFile.responseText);
+    }
+  }
+  rawFile.send(null);
+}
+
+function loadCallback(text) {
+  let data = JSON.parse(text);
+  photographers = data["photographers"];
+
+  const maindiv = document.getElementById("front-main");
+
+  for (let p = 0; p < photographers.length; p++) {
+    let divcard = document.createElement("DIV");
+    divcard.setAttribute("class", "photographer-card");
+    maindiv.appendChild(divcard);
+
+    let anchor = document.createElement("A");
+    anchor.setAttribute("href", "mimi_keel.html");
+    divcard.appendChild(anchor);
+    
+    let photographerMain = document.createElement("DIV");
+    photographerMain.setAttribute("class", "photographer-main");
+    anchor.appendChild(photographerMain);
+
+    // Picture
+    let picture = document.createElement("PICTURE");
+    picture.setAttribute("class", "front-photo");
+    photographerMain.appendChild(picture);
+
+    let source = document.createElement("SOURCE");
+    source.setAttribute(
+      "srcset",
+      "/Sample Photos-2/Photographers ID Photos/" + photographers[p]["portrait"]
+    );
+    picture.appendChild(source);
+
+    let img = document.createElement("IMG");
+    img.setAttribute("alt", "Photo by " + photographers[p]["name"]);
+    img.setAttribute("src", "/Sample Photos-2/Photographers ID Photos/" + photographers[p]["portrait"]);
+    picture.appendChild(img);
+
+    let name = document.createElement("DIV");
+    name.setAttribute("class", "photographer-name");
+    name.innerHTML = photographers[p]["name"];
+    photographerMain.appendChild(name);
+  
+
+    // Details
+    let details = document.createElement("DIV");
+    details.setAttribute("class", "photographer-details");
+    photographerMain.appendChild(details);
+
+    let location = document.createElement("DIV");
+    location.setAttribute("class", "location");
+    location.innerHTML = photographers[p]["city"];
+    details.appendChild(location);
+
+    let description = document.createElement("DIV");
+    description.setAttribute("class", "description");
+    description.innerHTML = photographers[p]["tagline"];
+    details.appendChild(description);
+
+    let price = document.createElement("DIV");
+    price.setAttribute("class", "price");
+    price.innerHTML = "$" + photographers[p]["price"] + "/day";
+    details.appendChild(price);
+
+    // Categories
+    let categories = document.createElement("DIV");
+    categories.setAttribute("class", "photographer-categories");
+    photographerMain.appendChild(categories);
+
+    for (let i = 0; i < photographers[p]["tags"].length; i++) {
+      let button = document.createElement("BUTTON");
+      button.setAttribute("aria-label", "filter");
+      button.setAttribute("class", "filter");
+      button.innerHTML = "#" + photographers[p]["tags"][i];
+      categories.appendChild(button);
+    }
+
+  }
+}
+
+loadJson("/fisheyedata.json", loadCallback);

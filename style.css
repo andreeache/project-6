@@ -31,8 +31,6 @@ li {
   list-style-type: none;
 }
 
-
-
 .header-main {
   display: flex;
   flex-direction: row;
@@ -201,7 +199,7 @@ li {
   font-size: 13px;
 }
 
-.despcription {
+.description {
   text-align: center;
   font-size: 10px;
 }
@@ -335,16 +333,14 @@ li {
     height: 150px;
     width: 150px;
   }
-
-  
 }
 
 @media screen and (max-width: 390px) {
-    .photo-right-aligned img {
-        width: 120px;
-        height: 120px;
-      }
-    }
+  .photo-right-aligned img {
+    width: 120px;
+    height: 120px;
+  }
+}
 
 .contact {
   background-color: var(--font-color-secondary);
@@ -466,16 +462,12 @@ li {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-
-
 /* style portfolio */
 .portfolio {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  
 }
-
 
 @media screen and (max-width: 1024px) {
   .portfolio {
@@ -488,14 +480,14 @@ li {
   height: 350px;
   border: 5px;
   object-fit: cover;
-  border-radius: 5px;  
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 1024px) {
-    .photo img {
-        width: 350px;
-        height: 300px;
-    }
+  .photo img {
+    width: 350px;
+    height: 300px;
+  }
 }
 
 .photo-card {
@@ -504,15 +496,13 @@ li {
   width: 33%;
   margin-bottom: 30px;
   padding: 20px;
-  
- 
 }
 
 @media screen and (max-width: 1024px) {
-    .photo-card {
-        width: 50%;
-        padding: 0px 20px;
-    }
+  .photo-card {
+    width: 50%;
+    padding: 0px 20px;
+  }
 }
 
 .photo-card-details {
@@ -525,9 +515,9 @@ li {
 }
 
 @media screen and (max-width: 1024px) {
-.photo-card-details {
+  .photo-card-details {
     width: 350px;
-}
+  }
 }
 
 .photo-description {
@@ -613,9 +603,9 @@ li {
 }
 
 @media screen and (max-width: 768px) {
-    .bground {
-        background-color: #DB8876;
-    }
+  .bground {
+    background-color: #db8876;
+  }
 }
 
 .modal-title {
@@ -699,7 +689,7 @@ li {
   max-width: 700px;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
-  background: #DB8876;
+  background: #db8876;
   border-radius: 5px;
   position: relative;
   color: #fff;
@@ -850,10 +840,10 @@ input[data-error]::after {
 }
 
 @media screen and (max-width: 768px) {
-    .lightbox {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
+  .lightbox {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
 
 /* Lightbox modal Content */
@@ -877,13 +867,13 @@ input[data-error]::after {
 }
 
 @media screen and (max-width: 768px) {
-    .closelightbox {
-        position: absolute;
-        top: 90px;
-        right: 2vw;
-        font-size: 28px;
-        font-weight: normal;
-    }
+  .closelightbox {
+    position: absolute;
+    top: 90px;
+    right: 2vw;
+    font-size: 28px;
+    font-weight: normal;
+  }
 }
 
 .closelightbox:hover,
@@ -894,8 +884,6 @@ input[data-error]::after {
 }
 
 /* Hide the slides by default */
-
-
 
 .lightboxSlides {
   display: none;
@@ -910,21 +898,20 @@ input[data-error]::after {
   object-fit: cover;
 }
 
-.lightbox-text
-{
-    display: flex;
-    flex-wrap: wrap;
-    color: #911C1C;
-    font-size: 24px;
-    margin-top: 10px;
-    justify-content: center;
+.lightbox-text {
+  display: flex;
+  flex-wrap: wrap;
+  color: #911c1c;
+  font-size: 24px;
+  margin-top: 10px;
+  justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
-    .lightbox-text{
-        justify-content: flex-start;
-        padding-left: 9px;
-    }
+  .lightbox-text {
+    justify-content: flex-start;
+    padding-left: 9px;
+  }
 }
 
 /* Next & previous buttons */
@@ -952,13 +939,13 @@ input[data-error]::after {
 }
 
 @media screen and (max-width: 768px) {
-    .prev {
-        left: -8.5%;
-    }
+  .prev {
+    left: -8.5%;
+  }
 
-    .next {
-        right: -8.5%;
-    }
+  .next {
+    right: -8.5%;
+  }
 }
 
 .prev,
