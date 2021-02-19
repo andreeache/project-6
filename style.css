@@ -156,6 +156,12 @@ li {
   align-content: center;
 }
 
+.front-photo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .front-photo img {
   width: 200px;
   height: 200px;

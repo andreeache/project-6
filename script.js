@@ -132,16 +132,16 @@ function loadCallback(text) {
   let data = JSON.parse(text);
   photographers = data["photographers"];
 
-  const maindiv = document.getElementById("front-main");
+  const frontMain = document.getElementById("front-main");
 
   for (let p = 0; p < photographers.length; p++) {
-    let divcard = document.createElement("DIV");
-    divcard.setAttribute("class", "photographer-card");
-    maindiv.appendChild(divcard);
+    let photographerCard = document.createElement("DIV");
+    photographerCard.setAttribute("class", "photographer-card");
+    frontMain.appendChild(photographerCard);
 
     let anchor = document.createElement("A");
     anchor.setAttribute("href", "mimi_keel.html");
-    divcard.appendChild(anchor);
+    photographerCard.appendChild(anchor);
     
     let photographerMain = document.createElement("DIV");
     photographerMain.setAttribute("class", "photographer-main");
@@ -173,7 +173,7 @@ function loadCallback(text) {
     // Details
     let details = document.createElement("DIV");
     details.setAttribute("class", "photographer-details");
-    photographerMain.appendChild(details);
+    photographerCard.appendChild(details);
 
     let location = document.createElement("DIV");
     location.setAttribute("class", "location");
@@ -193,7 +193,7 @@ function loadCallback(text) {
     // Categories
     let categories = document.createElement("DIV");
     categories.setAttribute("class", "photographer-categories");
-    photographerMain.appendChild(categories);
+    photographerCard.appendChild(categories);
 
     for (let i = 0; i < photographers[p]["tags"].length; i++) {
       let button = document.createElement("BUTTON");
