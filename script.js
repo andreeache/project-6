@@ -155,13 +155,13 @@ function loadCallback(text) {
     let source = document.createElement("SOURCE");
     source.setAttribute(
       "srcset",
-      "/Sample Photos-2/Photographers ID Photos/" + photographers[p]["portrait"]
+      "Sample Photos-2/Photographers ID Photos/" + photographers[p]["portrait"]
     );
     picture.appendChild(source);
 
     let img = document.createElement("IMG");
     img.setAttribute("alt", "Photo by " + photographers[p]["name"]);
-    img.setAttribute("src", "/Sample Photos-2/Photographers ID Photos/" + photographers[p]["portrait"]);
+    img.setAttribute("src", "Sample Photos-2/Photographers ID Photos/" + photographers[p]["portrait"]);
     picture.appendChild(img);
 
     let name = document.createElement("DIV");
