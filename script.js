@@ -140,7 +140,10 @@ function loadCallback(text) {
     frontMain.appendChild(photographerCard);
 
     let anchor = document.createElement("A");
-    anchor.setAttribute("href", "mimi_keel.html");
+    anchor.setAttribute(
+      "href",
+      "mimi_keel.html?photographer_id=" + photographers[p]["id"]
+    );
     photographerCard.appendChild(anchor);
     
     let photographerMain = document.createElement("DIV");
