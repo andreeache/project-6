@@ -1,4 +1,6 @@
-//style the contctform modal
+
+
+//style the contact form modal
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
@@ -130,9 +132,11 @@ function loadJson(file, callback) {
 
 function loadCallback(text) {
   let data = JSON.parse(text);
-  photographers = data["photographers"];
+  let photographers = data["photographers"];
 
+  // generating front-main from main page 
   const frontMain = document.getElementById("front-main");
+  
 
   for (let p = 0; p < photographers.length; p++) {
     let photographerCard = document.createElement("DIV");
@@ -206,7 +210,15 @@ function loadCallback(text) {
       categories.appendChild(button);
     }
 
+    
   }
+
+  
 }
 
 loadJson("fisheyedata.json", loadCallback);
+
+
+
+
+  
