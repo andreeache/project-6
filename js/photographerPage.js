@@ -22,19 +22,24 @@ function loadJson(file, callback) {
     const urlParams = new URLSearchParams(window.location.search);
 
     // iterate all elements in media
-    for (let f = 0; f < media.length; f++) {
+    for (let f = 0; f < media.length; f++) 
+    {
         let pc = media[f];
     // filter by photographer ID
         if (pc['photographerId'] != urlParams.get("photographer_id")) {
             continue;
         }
 
-    //photocard
-      let photoCard = document.createElement("DIV");
-      photoCard.setAttribute("class", "photo-card");
-      photoCard.innerText=pc['image'];
-      portfolio.appendChild(photoCard);}
+      //photocard
+        let photoCard = document.createElement("DIV");
+        photoCard.setAttribute("class", "photo-card");
+        photoCard.innerText=pc['image'];
+        portfolio.appendChild(photoCard);
 
+        let img = document.createElement("IMG");
+        img.setAttribute("src", "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]);
+        photoCard.appendChild(img);
+      }
 }
 
 
