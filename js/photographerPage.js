@@ -19,6 +19,7 @@ function loadJson(file, callback) {
 // generating portfolio
     const portfolio = document.getElementById("portfolio");
     // get the parameter dictionary
+    
     const urlParams = new URLSearchParams(window.location.search);
 
     // iterate all elements in media
@@ -33,13 +34,57 @@ function loadJson(file, callback) {
       //photocard
         let photoCard = document.createElement("DIV");
         photoCard.setAttribute("class", "photo-card");
-        photoCard.innerText=pc['image'];
         portfolio.appendChild(photoCard);
+        
+        let picture = document.createElement("PICTURE");
+        picture.setAttribute("class", "photo");
+        photoCard.appendChild(picture);
+
+        let source = document.createElement("SOURCE");
+        source.setAttribute("srcset", "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]);
+        picture.appendChild(source);
+
 
         let img = document.createElement("IMG");
         img.setAttribute("src", "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]);
-        photoCard.appendChild(img);
+        img.setAttribute ("class", "photo")
+        picture.appendChild(img);
+
+        
+        let pcDetails = document.createElement("DIV");
+        pcDetails.setAttribute("class", "photo-card-details");
+        photoCard.appendChild(pcDetails);
+
+
+        let phDescription = document.createElement("DIV");
+        phDescription.setAttribute("class", "photo-description" );
+        phDescription.innerText = pc ["image"];
+        pcDetails.appendChild(phDescription);
+
+        let photoPrice = document.createElement("DIV");
+        photoPrice.setAttribute("class","photo-price");
+        photoPrice.innerHTML = pc["price"] + '$';
+        pcDetails.appendChild(photoPrice);
+
+        let like = document.createElement("DIV");
+        like.setAttribute("class", "like");
+        pcDetails.appendChild(like);
+
+        let nrOfLikes = document.createElement("DIV");
+        nrOfLikes.setAttribute("class", "number-of-like");
+        nrOfLikes.innerHTML = pc ["likes"];
+        like.appendChild(nrOfLikes);
+
+        let likeIcon = document.createElement("DIV");
+        likeIcon.setAttribute("class", "fa fa-heart");
+        like.appendChild(likeIcon);
+
       }
+
+
+
+
+
 }
 
 
