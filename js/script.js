@@ -146,7 +146,7 @@ function loadCallback(text) {
     let anchor = document.createElement("A");
     anchor.setAttribute(
       "href",
-      "mimi_keel.html?photographer_id=" + photographers[p]["id"]
+      "photographer-page.html?photographer_id=" + photographers[p]["id"]
     );
     photographerCard.appendChild(anchor);
     
