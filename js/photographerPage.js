@@ -58,7 +58,7 @@ function loadJson(file, callback) {
 
         let phDescription = document.createElement("DIV");
         phDescription.setAttribute("class", "photo-description" );
-        phDescription.innerText = pc ["image"];
+        phDescription.innerText = pc ["alt"];
         pcDetails.appendChild(phDescription);
 
         let photoPrice = document.createElement("DIV");
