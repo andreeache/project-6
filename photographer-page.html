@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" class="ref">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <title>Mimi Keel Photographer</title>
+    <title>Fisheye Photographer</title>
 </head>
 
 
@@ -27,28 +27,22 @@
         <div class="photographer-info">
             <div class="info-details">
                 <!-- photographer name on photographer page -->
-                <div class="photographer-name-pp">Mimi Keel</div>
+                <div class="photographer-name-pp" id="photographer-name-pp"></div>
                 <div class="photographer-details">
                     <!-- location-pp location on the photographer page -->
-                    <div class="location-pp">London, UK</div>
+                    <div class="location-pp" id="location-pp"></div>
                     <!-- description-pp - description on the photographer page -->
-                    <div class="description-pp">Finding beauty in everyday things</div>
+                    <div class="description-pp" id="description-pp"></div>
                 </div>
                 <br>
                 <div class="photographer-categories-pp">
-                    <div class="button-pp">
-                        <button aria-label="filter" class="filter">#portrait</button>
-                        <button aria-label="filter" class="filter">#events</button>
-                        <button aria-label="filter" class="filter">#travel</button>
-                        <button aria-label="filter" class="filter">#animals</button>
+                    <div class="button-pp" id="button-pp">
                     </div>
                 </div>
                 <button class="active btn contact modal-btn">Contact me</button>
 
             </div>
-            <picture class="front-photo photo-right-aligned">
-                <source srcset="Sample Photos-2/Photographers ID Photos/MimiKeel.jpg">
-                <img alt="Photo by Mimi Keel" src="Sample Photos-2/Photographers ID Photos/MimiKeel.jpg">
+            <picture class="front-photo photo-right-aligned" id="front-photo">
             </picture>
         </div>
 
@@ -149,7 +143,7 @@
             </div>
         </div>
     </main>
-
+    <script src="js/script.js"></script>
     <script src="js/dropdown.js"></script>
     <script src="js/photographerPage.js"></script>
 </body>
