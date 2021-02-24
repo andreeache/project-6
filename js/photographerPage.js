@@ -74,12 +74,15 @@ function loadCallbackpp(text) {
   const portfolio = document.getElementById("portfolio");
 
   // iterate all elements in media
+  let currentPhoto = 0;
   for (let f = 0; f < media.length; f++) {
     let pc = media[f];
     // filter by photographer ID
     if (pc["photographerId"] != urlParams.get("photographer_id")) {
       continue;
     }
+
+    currentPhoto += 1;
 
     //photocard
     let photoCard = document.createElement("DIV");
@@ -102,7 +105,11 @@ function loadCallbackpp(text) {
       "src",
       "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]
     );
-    img.setAttribute("class", "photo");
+    img.setAttribute("class", "hover-shadow cursor");
+    img.setAttribute(
+      "onclick",
+      "openLightbox();currentSlide(" + String(currentPhoto) + ")"
+    );
     picture.appendChild(img);
 
     let pcDetails = document.createElement("DIV");
@@ -131,6 +138,31 @@ function loadCallbackpp(text) {
     let likeIcon = document.createElement("DIV");
     likeIcon.setAttribute("class", "fa fa-heart");
     like.appendChild(likeIcon);
+
+    // add the photo to the lightbox too
+    let lightbox = document.getElementById("lightbox-content");
+
+    let lightboxSlide = document.createElement("DIV");
+    lightboxSlide.setAttribute("class", "lightboxSlides");
+    lightbox.appendChild(lightboxSlide);
+
+    let lbImage = document.createElement("IMG");
+    lbImage.setAttribute("alt", "Photo by " + photographer["name"]);
+    lbImage.setAttribute(
+      "src",
+      "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]
+    );
+    lightboxSlide.appendChild(lbImage);
+
+    let lbName = document.createElement("DIV");
+    lbName.setAttribute("class", "lightbox-text");
+    lbName.innerText = pc["alt"];
+    lightboxSlide.appendChild(lbName);
+
+    // <div class="lightboxSlides">
+    //                 <img alt="Rainbow Bird" src="Sample Photos-2/243/Animals_Rainbow.jpg">
+    //                 <div class="lightbox-text">Rainbow Bird</div>
+    //             </div>
   }
 }
 
