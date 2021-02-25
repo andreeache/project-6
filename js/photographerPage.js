@@ -33,6 +33,10 @@ function loadCallbackpp(text) {
   let phName = document.getElementById("photographer-name-pp");
   phName.innerText = photographer["name"];
 
+  // added photographer name to the contact form
+  const photographerNameModal = document.getElementById("modal-photographer-name");
+  photographerNameModal.innerText = photographer["name"];
+
   // photographer location
   let location = document.getElementById("location-pp");
   location.innerText = photographer["city"] + ", " + photographer["country"];
@@ -89,10 +93,11 @@ function loadCallbackpp(text) {
     photoCard.setAttribute("class", "photo-card");
     portfolio.appendChild(photoCard);
 
+    //create picture element 
     let picture = document.createElement("PICTURE");
     picture.setAttribute("class", "photo");
     photoCard.appendChild(picture);
-
+    // srcset for picture
     let source = document.createElement("SOURCE");
     source.setAttribute(
       "srcset",
@@ -100,6 +105,7 @@ function loadCallbackpp(text) {
     );
     picture.appendChild(source);
 
+    //create img element
     let img = document.createElement("IMG");
     img.setAttribute(
       "src",
@@ -112,29 +118,35 @@ function loadCallbackpp(text) {
     );
     picture.appendChild(img);
 
+    //create photo-card-details div, contains name and price
     let pcDetails = document.createElement("DIV");
     pcDetails.setAttribute("class", "photo-card-details");
     photoCard.appendChild(pcDetails);
 
+    // create div photo-description, contains photo's name 
     let phDescription = document.createElement("DIV");
     phDescription.setAttribute("class", "photo-description");
     phDescription.innerText = pc["alt"];
     pcDetails.appendChild(phDescription);
 
+    // create div with photo price
     let photoPrice = document.createElement("DIV");
     photoPrice.setAttribute("class", "photo-price");
     photoPrice.innerHTML = pc["price"] + "$";
     pcDetails.appendChild(photoPrice);
 
+    // create div for like section, contains nr of likes and heart icon
     let like = document.createElement("DIV");
     like.setAttribute("class", "like");
     pcDetails.appendChild(like);
 
+    // create div with number of like
     let nrOfLikes = document.createElement("DIV");
     nrOfLikes.setAttribute("class", "number-of-like");
     nrOfLikes.innerHTML = pc["likes"];
     like.appendChild(nrOfLikes);
 
+    // create div with heart icon
     let likeIcon = document.createElement("DIV");
     likeIcon.setAttribute("class", "fa fa-heart");
     like.appendChild(likeIcon);
@@ -142,10 +154,12 @@ function loadCallbackpp(text) {
     // add the photo to the lightbox too
     let lightbox = document.getElementById("lightbox-content");
 
+    //create lightboxSlides div
     let lightboxSlide = document.createElement("DIV");
     lightboxSlide.setAttribute("class", "lightboxSlides");
     lightbox.appendChild(lightboxSlide);
 
+    // create img element
     let lbImage = document.createElement("IMG");
     lbImage.setAttribute("alt", "Photo by " + photographer["name"]);
     lbImage.setAttribute(
@@ -154,16 +168,15 @@ function loadCallbackpp(text) {
     );
     lightboxSlide.appendChild(lbImage);
 
+    // created lightbox-text, contains photo's name
     let lbName = document.createElement("DIV");
     lbName.setAttribute("class", "lightbox-text");
     lbName.innerText = pc["alt"];
     lightboxSlide.appendChild(lbName);
 
-    // <div class="lightboxSlides">
-    //                 <img alt="Rainbow Bird" src="Sample Photos-2/243/Animals_Rainbow.jpg">
-    //                 <div class="lightbox-text">Rainbow Bird</div>
-    //             </div>
   }
 }
+
+
 
 loadJson("fisheyedata.json", loadCallbackpp);
