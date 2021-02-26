@@ -34,7 +34,9 @@ function loadCallbackpp(text) {
   phName.innerText = photographer["name"];
 
   // added photographer name to the contact form
-  const photographerNameModal = document.getElementById("modal-photographer-name");
+  const photographerNameModal = document.getElementById(
+    "modal-photographer-name"
+  );
   photographerNameModal.innerText = photographer["name"];
 
   // photographer location
@@ -93,7 +95,7 @@ function loadCallbackpp(text) {
     photoCard.setAttribute("class", "photo-card");
     portfolio.appendChild(photoCard);
 
-    //create picture element 
+    //create picture element
     let picture = document.createElement("PICTURE");
     picture.setAttribute("class", "photo");
     photoCard.appendChild(picture);
@@ -123,7 +125,7 @@ function loadCallbackpp(text) {
     pcDetails.setAttribute("class", "photo-card-details");
     photoCard.appendChild(pcDetails);
 
-    // create div photo-description, contains photo's name 
+    // create div photo-description, contains photo's name
     let phDescription = document.createElement("DIV");
     phDescription.setAttribute("class", "photo-description");
     phDescription.innerText = pc["alt"];
@@ -149,6 +151,7 @@ function loadCallbackpp(text) {
     // create div with heart icon
     let likeIcon = document.createElement("DIV");
     likeIcon.setAttribute("class", "fa fa-heart");
+    likeIcon.addEventListener("click", incrementLikes);
     like.appendChild(likeIcon);
 
     // add the photo to the lightbox too
@@ -173,10 +176,30 @@ function loadCallbackpp(text) {
     lbName.setAttribute("class", "lightbox-text");
     lbName.innerText = pc["alt"];
     lightboxSlide.appendChild(lbName);
-
   }
+  sumLikes();
 }
 
+function incrementLikes() {
+  // this = heart. this.previousSibling = the element with the number of likes
+  this.previousSibling.innerText = parseInt(this.previousSibling.innerHTML) + 1;
+  sumLikes();
+}
 
+// sum the likes from all the like elements
+function sumLikes() {
+  // get all the like elements in an array
+  const likes = document.getElementsByClassName("number-of-like");
+
+  let sum = 0;
+  // iterate the array and add each like number to the above sum
+  for (i = 0; i < likes.length; i++) {
+    sum += parseInt(likes[i].innerText);
+  }
+
+  // set the sum in the destination
+  const d = document.getElementById("sum-likes");
+  d.innerText = sum;
+}
 
 loadJson("fisheyedata.json", loadCallbackpp);
