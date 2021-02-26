@@ -257,7 +257,8 @@ li {
   position: relative;
   background-color: var(--grey-font);
   height: 313px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -284,6 +285,7 @@ li {
 .photographer-name-pp {
   font-size: 64px;
   color: var(--font-color-primary);
+  max-width: 32vw;
 }
 
 @media screen and (max-width: 768px) {
@@ -356,7 +358,7 @@ li {
   font-size: 20px;
   position: absolute;
   top: 15%;
-  left: 30vw;
+  left: 35vw;
   border-radius: 5px;
   border: 0px;
 }
@@ -499,7 +501,7 @@ li {
 .photo-card {
   position: relative;
   flex-grow: 1;
-  width: 33%;
+  max-width: 33%;
   margin-bottom: 30px;
   padding: 20px;
 }
@@ -507,7 +509,7 @@ li {
 @media screen and (max-width: 1024px) {
   .photo-card {
     width: 50%;
-    padding: 0px 20px;
+    padding-left:20px;
   }
 }
 
