@@ -1,7 +1,3 @@
-
-
-
-
 // load json
 
 function loadJson(file, callback) {
@@ -12,7 +8,7 @@ function loadJson(file, callback) {
     if (rawFile.readyState === 4 && rawFile.status == "200") {
       callback(rawFile.responseText);
     }
-  }
+  };
   rawFile.send(null);
 }
 
@@ -20,9 +16,8 @@ function loadCallback(text) {
   let data = JSON.parse(text);
   let photographers = data["photographers"];
 
-  // generating front-main from main page 
+  // generating front-main from main page
   const frontMain = document.getElementById("front-main");
-  
 
   for (let p = 0; p < photographers.length; p++) {
     let photographerCard = document.createElement("DIV");
@@ -35,7 +30,7 @@ function loadCallback(text) {
       "photographer-page.html?photographer_id=" + photographers[p]["id"]
     );
     photographerCard.appendChild(anchor);
-    
+
     let photographerMain = document.createElement("DIV");
     photographerMain.setAttribute("class", "photographer-main");
     anchor.appendChild(photographerMain);
@@ -54,14 +49,16 @@ function loadCallback(text) {
 
     let img = document.createElement("IMG");
     img.setAttribute("alt", "Photo by " + photographers[p]["name"]);
-    img.setAttribute("src", "Sample Photos-2/Photographers ID Photos/" + photographers[p]["portrait"]);
+    img.setAttribute(
+      "src",
+      "Sample Photos-2/Photographers ID Photos/" + photographers[p]["portrait"]
+    );
     picture.appendChild(img);
 
     let name = document.createElement("DIV");
     name.setAttribute("class", "photographer-name");
     name.innerHTML = photographers[p]["name"];
     photographerMain.appendChild(name);
-  
 
     // Details
     let details = document.createElement("DIV");
@@ -91,20 +88,33 @@ function loadCallback(text) {
     for (let i = 0; i < photographers[p]["tags"].length; i++) {
       let button = document.createElement("BUTTON");
       button.setAttribute("aria-label", "filter");
-      button.setAttribute("class", "filter");
+      button.setAttribute("class", "filter filter-card");
       button.innerHTML = "#" + photographers[p]["tags"][i];
       categories.appendChild(button);
     }
-
-    
   }
-
-  
 }
 
 loadJson("fisheyedata.json", loadCallback);
 
+const filterSelection = (filter) => {
+  const categories = document.getElementsByClassName("filter-card");
 
+  // Push into keepCard only the cards that matches the filter
+  let keepCard = [];
+  for (i = 0; i < categories.length; i++) {
+    if (categories[i].innerText == "#" + filter) {
+      keepCard.push(categories[i].parentNode.parentNode);
+    }
+  }
 
-
-  
+  // hide all the cards
+  let cards = document.getElementsByClassName("photographer-card");
+  for (i = 0; i < cards.length; i++) {
+    cards[i].style.display = "none";
+  }
+  // and display only the ones I want to keep
+  for (i = 0; i < keepCard.length; i++) {
+    keepCard[i].style.display = "flex";
+  }
+};

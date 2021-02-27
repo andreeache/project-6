@@ -31,7 +31,7 @@ function hideModal() {
 modalClose.forEach((btn) => btn.addEventListener("click", hideModal));
 
 // email validation -  from w3resource.com
-function ValidateEmail(mail) 
+const ValidateEmail = (mail) =>
 {
  if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail))
   {

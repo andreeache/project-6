@@ -96,12 +96,18 @@ li {
   border: 0.5px solid #c4c4c4;
   box-sizing: border-box;
   border-radius: 11px;
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
   .filter {
     font-weight: bolder;
   }
 }
+
+/* .filter:hover{
+  background-color: rgb(244, 239, 239);
+} */
+
 
 .title {
   color: var(--color-primary);
