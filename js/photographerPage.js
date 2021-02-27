@@ -95,6 +95,13 @@ function loadCallbackpp(text) {
     photoCard.setAttribute("class", "photo-card");
     portfolio.appendChild(photoCard);
 
+    // create an invisible div containing the date, used only for sorting
+    let cardDate = document.createElement("DIV");
+    cardDate.innerText = pc["date"];
+    cardDate.style.display = "none";
+    cardDate.setAttribute("class", "date-sort");
+    photoCard.append(cardDate);
+
     //create picture element
     let picture = document.createElement("PICTURE");
     picture.setAttribute("class", "photo");
@@ -178,6 +185,7 @@ function loadCallbackpp(text) {
     lightboxSlide.appendChild(lbName);
   }
   sumLikes();
+  sortMedia("Popularity");
 }
 
 function incrementLikes() {
@@ -201,5 +209,63 @@ function sumLikes() {
   const d = document.getElementById("sum-likes");
   d.innerText = sum;
 }
+
+// Sorting functions, comparing two cards
+const sortByDate = (a, b) => {
+  if (
+    a.getElementsByClassName("date-sort")[0].innerText <
+    b.getElementsByClassName("date-sort")[0].innerText
+  ) {
+    return -1;
+  }
+  return 1;
+};
+
+const sortByPopularity = (a, b) => {
+  return (
+    parseInt(a.getElementsByClassName("number-of-like")[0].innerText) <
+    parseInt(b.getElementsByClassName("number-of-like")[0].innerText)
+  );
+};
+
+const sortByTitle = (a, b) => {
+  if (
+    a.getElementsByClassName("photo-description")[0].innerText <
+    b.getElementsByClassName("photo-description")[0].innerText
+  ) {
+    return -1;
+  }
+  return 1;
+};
+
+// apply sorting; parameter has to be one of: Date, Popularity or Title
+// function will be called in dropdown.js
+const sortMedia = (sortby) => {
+  //transfrom html colection in an array
+  let cards = [...document.getElementsByClassName("photo-card")];
+  if (cards.length < 1) {
+    return;
+  }
+  switch (sortby) {
+    case "Date":
+      cards.sort(sortByDate);
+      break;
+    case "Popularity":
+      cards.sort(sortByPopularity);
+      break;
+    case "Title":
+      cards.sort(sortByTitle);
+      break;
+  }
+
+
+  const portfolio = document.getElementById("portfolio");
+  //empty the portfolio
+  portfolio.innerHTML = "";
+  //and refill it with the sorted cards
+  for (i = 0; i < cards.length; i++) {
+    portfolio.appendChild(cards[i]);
+  }
+};
 
 loadJson("fisheyedata.json", loadCallbackpp);

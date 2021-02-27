@@ -1,4 +1,4 @@
-/// dropdown
+/// dropdown, followe example from W3 website
 
 /* Look for any elements with the class "dropdown-select": */
 const dropdownSelect = document.getElementsByClassName("dropdown-select");
@@ -12,15 +12,16 @@ function createMasterDDElement(ddSelect) {
   /* For each element, create a new DIV that will act as the selected item: */
   let topSelectedItem = document.createElement("DIV");
   topSelectedItem.setAttribute("class", "select-selected");
-  topSelectedItem.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  topSelectedItem.innerHTML =
+    selElmnt.options[selElmnt.selectedIndex].innerHTML;
   ddSelect.appendChild(topSelectedItem);
   /* For each element, create a new DIV that will contain the option list: */
   let restOfList = document.createElement("DIV");
   restOfList.setAttribute("class", "select-items select-hide");
-  createDDElement(restOfList, selElmnt, topSelectedItem)
+  createDDElement(restOfList, selElmnt, topSelectedItem);
   ddSelect.appendChild(restOfList);
-  
-  topSelectedItem.addEventListener("click", function(e) {
+
+  topSelectedItem.addEventListener("click", function (e) {
     /* When the select box is clicked, close any other select boxes,
     and open/close the current select box: */
     e.stopPropagation();
@@ -31,37 +32,38 @@ function createMasterDDElement(ddSelect) {
 }
 
 function createDDElement(aParent, selElmnt, aTopParent) {
-    var j;
-    for (j = 0; j < selElmnt.length; j++) {
-        /* For each option in the original select element,
+  var j;
+  for (j = 0; j < selElmnt.length; j++) {
+    /* For each option in the original select element,
         create a new DIV that will act as an option item: */
-        if (aTopParent.innerHTML == selElmnt.options[j].innerHTML) {
-            continue;
-        }
-        let c = document.createElement("DIV");
-        c.innerHTML = selElmnt.options[j].innerHTML;
-        c.addEventListener("click", function(e) {
-            /* When an item is clicked, update the original select box,
-            and the selected item: */
-            var y, i, k, s, h;
-            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-            h = this.parentNode.previousSibling;
-            for (i = 0; i < s.length; i++) {
-              if (s.options[i].innerHTML == this.innerHTML) {
-                s.selectedIndex = i;
-                h.innerHTML = this.innerHTML;
-
-                /* recreate all the divs */
-                let p = aTopParent.parentNode;
-                p.removeChild(aTopParent);
-                p.removeChild(aParent);
-                h = createMasterDDElement(p);
-                break;
-                }
-            }
-        });
-        aParent.appendChild(c);
+    if (aTopParent.innerHTML == selElmnt.options[j].innerHTML) {
+      continue;
     }
+    let c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function (e) {
+      /* When an item is clicked, update the original select box,
+            and the selected item: */
+      var y, i, k, s, h;
+      s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+      h = this.parentNode.previousSibling;
+      for (i = 0; i < s.length; i++) {
+        if (s.options[i].innerHTML == this.innerHTML) {
+          s.selectedIndex = i;
+          h.innerHTML = this.innerHTML;
+
+          /* recreate all the divs */
+          let p = aTopParent.parentNode;
+          p.removeChild(aTopParent);
+          p.removeChild(aParent);
+          h = createMasterDDElement(p);
+          sortMedia(this.innerText);
+          break;
+        }
+      }
+    });
+    aParent.appendChild(c);
+  }
 }
 
 function closeAllSelect(elmnt) {
@@ -73,7 +75,7 @@ function closeAllSelect(elmnt) {
   let y = document.getElementsByClassName("select-selected");
   for (i = 0; i < y.length; i++) {
     if (elmnt == y[i]) {
-      arrNo.push(i)
+      arrNo.push(i);
     } else {
       y[i].classList.remove("select-arrow-active");
     }
