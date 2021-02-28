@@ -17,6 +17,7 @@ body {
   /* justify-content: center; */
   min-height: 100vh;
   margin: 20px 20px;
+  font-family: "DM Sans", sans-serif;
 }
 
 a:visited {
@@ -244,7 +245,7 @@ li {
   border: 0;
 }
 
-/* style the photgrapher page */
+/* style the photographer page */
 
 .media-items {
   display: flex;
@@ -289,7 +290,7 @@ li {
 .photographer-name-pp {
   font-size: 64px;
   color: var(--font-color-primary);
-  max-width: 32vw;
+  max-width: 50vw;
 }
 
 @media screen and (max-width: 768px) {
@@ -563,6 +564,7 @@ li {
 
 .fa-heart {
   margin-left: 5px;
+  margin-top: 3px;
 }
 
 .fixed-info-box {
