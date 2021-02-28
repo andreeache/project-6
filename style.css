@@ -261,7 +261,7 @@ li {
 .photographer-info {
   position: relative;
   background-color: var(--grey-font);
-  height: 313px;
+  height: auto;
   margin-bottom: 30px;
   margin-top: 20px;
   display: flex;
@@ -290,12 +290,13 @@ li {
 .photographer-name-pp {
   font-size: 64px;
   color: var(--font-color-primary);
-  max-width: 50vw;
+  max-width: 30vw;
 }
 
 @media screen and (max-width: 768px) {
   .photographer-name-pp {
     font-size: 36px;
+    max-width: 50vw;
   }
 }
 
