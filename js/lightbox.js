@@ -32,3 +32,10 @@ function plusSlides(n) {
     currentSlide(newPosition);
   }
 }
+
+//Close lightbox with esc key
+window.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    myLightbox.style.display = 'none'
+  }
+})

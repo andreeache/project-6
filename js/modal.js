@@ -91,3 +91,10 @@ function validateForm() {
   hideModal();
   return false;
 }
+
+//Close modal with esc key
+window.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    modalbg.style.display = 'none'
+  }
+})
