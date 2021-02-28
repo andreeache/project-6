@@ -1,4 +1,4 @@
-/// dropdown, followe example from W3 website
+/// dropdown, followed example from W3 website
 
 /* Look for any elements with the class "dropdown-select": */
 const dropdownSelect = document.getElementsByClassName("dropdown-select");

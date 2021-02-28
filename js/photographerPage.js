@@ -102,30 +102,45 @@ function loadCallbackpp(text) {
     cardDate.setAttribute("class", "date-sort");
     photoCard.append(cardDate);
 
-    //create picture element
-    let picture = document.createElement("PICTURE");
-    picture.setAttribute("class", "photo");
-    photoCard.appendChild(picture);
-    // srcset for picture
-    let source = document.createElement("SOURCE");
-    source.setAttribute(
-      "srcset",
-      "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]
-    );
-    picture.appendChild(source);
+    if (pc["image"]) {
+      //create picture element
+      let picture = document.createElement("PICTURE");
+      picture.setAttribute("class", "photo");
+      photoCard.appendChild(picture);
+      // srcset for picture
+      let source = document.createElement("SOURCE");
+      source.setAttribute(
+        "srcset",
+        "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]
+      );
+      picture.appendChild(source);
 
-    //create img element
-    let img = document.createElement("IMG");
-    img.setAttribute(
-      "src",
-      "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]
-    );
-    img.setAttribute("class", "hover-shadow cursor");
-    img.setAttribute(
-      "onclick",
-      "openLightbox();currentSlide(" + String(currentPhoto) + ")"
-    );
-    picture.appendChild(img);
+      //create img element
+      let img = document.createElement("IMG");
+      img.setAttribute(
+        "src",
+        "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]
+      );
+      img.setAttribute("class", "hover-shadow cursor");
+      img.setAttribute(
+        "onclick",
+        "openLightbox();currentSlide(" + String(currentPhoto) + ")"
+      );
+      picture.appendChild(img);
+    } else {
+      // it's a video
+      let video = document.createElement("VIDEO");
+      video.controls = true;
+      video.setAttribute("class", "video");
+      photoCard.appendChild(video);
+      //srcset for video
+      let source = document.createElement("SOURCE");
+      source.setAttribute(
+        "src",
+        "Sample Photos-2/" + pc["photographerId"] + "/" + pc["video"] + "#t=0.1"
+      );
+      video.appendChild(source);
+    }
 
     //create photo-card-details div, contains name and price
     let pcDetails = document.createElement("DIV");
@@ -169,14 +184,27 @@ function loadCallbackpp(text) {
     lightboxSlide.setAttribute("class", "lightboxSlides");
     lightbox.appendChild(lightboxSlide);
 
-    // create img element
-    let lbImage = document.createElement("IMG");
-    lbImage.setAttribute("alt", "Photo by " + photographer["name"]);
-    lbImage.setAttribute(
-      "src",
-      "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]
-    );
-    lightboxSlide.appendChild(lbImage);
+    if (pc["image"]) {
+      // create img element
+      let lbImage = document.createElement("IMG");
+      lbImage.setAttribute("alt", "Photo by " + photographer["name"]);
+      lbImage.setAttribute(
+        "src",
+        "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]
+      );
+      lightboxSlide.appendChild(lbImage);
+    } else {
+      let video = document.createElement("VIDEO");
+      video.controls = true;
+      lightboxSlide.appendChild(video);
+      //srcset for video
+      let source = document.createElement("SOURCE");
+      source.setAttribute(
+        "src",
+        "Sample Photos-2/" + pc["photographerId"] + "/" + pc["video"] + "#t=0.1"
+      );
+      video.appendChild(source);
+    }
 
     // created lightbox-text, contains photo's name
     let lbName = document.createElement("DIV");
@@ -257,7 +285,6 @@ const sortMedia = (sortby) => {
       cards.sort(sortByTitle);
       break;
   }
-
 
   const portfolio = document.getElementById("portfolio");
   //empty the portfolio
