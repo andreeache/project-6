@@ -34,8 +34,18 @@ function plusSlides(n) {
 }
 
 //Close lightbox with esc key
-window.addEventListener('keydown', function (event) {
-  if (event.key === 'Escape') {
-    myLightbox.style.display = 'none'
+window.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    myLightbox.style.display = "none";
+  } else if (event.key === "ArrowRight") {
+    plusSlides(1);
+  } else if (event.key === "ArrowLeft") {
+    plusSlides(-1);
   }
-})
+});
+
+// window.addEventListener('arrowLeft', function(event) {
+//   if (event.key === "ArrowLeft") {
+//     myLightbox.
+//   }
+// })

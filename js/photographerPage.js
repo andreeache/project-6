@@ -214,6 +214,11 @@ function loadCallbackpp(text) {
   }
   sumLikes();
   sortMedia("Popularity");
+
+  //photographer fare per day
+
+  photographerPrice = document.getElementById("price-pp");
+  photographerPrice. innerHTML = `${photographer["price"]}$ / Day`;
 }
 
 function incrementLikes() {
