@@ -28,6 +28,15 @@ a {
   text-decoration: none;
 }
 
+.skip-to-content {
+  z-index: 1;
+  position: fixed;
+  left: 50vw;
+  margin-bottom: 5px;
+  display: none;
+  
+}
+
 li {
   list-style-type: none;
 }
