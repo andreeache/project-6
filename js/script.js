@@ -91,6 +91,11 @@ function loadCallback(text) {
       button.setAttribute("class", "filter filter-card");
       button.innerHTML = "#" + photographers[p]["tags"][i];
       categories.appendChild(button);
+
+      let buttonSr = document.createElement("SPAN");
+      buttonSr.setAttribute("class", "sr-only");
+      buttonSr.innerHTML = "#" + photographers[p]["tags"][i];
+      button.appendChild(buttonSr);
     }
   }
 }

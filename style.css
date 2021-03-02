@@ -175,6 +175,7 @@ li {
 @media screen and (max-width: 768px) {
   .photographer-card {
     margin-bottom: 5px;
+    justify-content: center;
   }
 }
 
@@ -207,18 +208,20 @@ li {
   }
 }
 
-@media screen and (max-width: 390px) {
-  .front-photo img {
-    width: 100px;
-    height: 100px;
-  }
-}
 
 .photographer-name {
   color: var(--font-color-primary);
   font-size: 36px;
   align-self: center;
 }
+
+@media screen and (max-width: 380px) {
+  .photographer-name {
+    font-size: 32px;
+   
+  }
+}
+
 
 .photographer-details {
   display: flex;

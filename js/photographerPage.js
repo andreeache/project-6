@@ -56,6 +56,11 @@ function loadCallbackpp(text) {
     button.setAttribute("class", "filter");
     button.innerHTML = "#" + photographer["tags"][i];
     tag.appendChild(button);
+
+    let buttonSr = document.createElement("SPAN");
+      buttonSr.setAttribute("class", "sr-only");
+      buttonSr.innerHTML = "#" + photographer["tags"][i];
+      button.appendChild(buttonSr);
   }
 
   // photographer image
