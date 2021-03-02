@@ -29,12 +29,28 @@ a {
 }
 
 .skip-to-content {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.skip-to-content:focus {
   z-index: 1;
   position: fixed;
-  left: 50vw;
+  left: 45vw;
   margin-bottom: 5px;
-  display: none;
-  
+  width: auto;
+  height: auto;
+  background-color: var(--font-color-primary);
+  height: 20px;
+  clip: unset;
+  margin-bottom: 10px;
+  color: black;
 }
 
 li {
