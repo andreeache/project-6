@@ -69,7 +69,7 @@ function loadCallbackpp(text) {
   frontPhoto.appendChild(source);
 
   let img = document.createElement("IMG");
-  img.setAttribute("alt", "Photo of " + photographer["name"]);
+  img.setAttribute("alt", photographer["alt"]);
   img.setAttribute(
     "src",
     "Sample Photos-2/Photographers ID Photos/" + photographer["portrait"]
@@ -191,7 +191,7 @@ function loadCallbackpp(text) {
     if (pc["image"]) {
       // create img element
       let lbImage = document.createElement("IMG");
-      lbImage.setAttribute("alt", "Photo by " + photographer["name"]);
+      lbImage.setAttribute("alt", photographer["name"]);
       lbImage.setAttribute(
         "src",
         "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]

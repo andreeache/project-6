@@ -48,7 +48,7 @@ function loadCallback(text) {
     picture.appendChild(source);
 
     let img = document.createElement("IMG");
-    img.setAttribute("alt", "Photo by " + photographers[p]["name"]);
+    img.setAttribute("alt", photographers[p]["alt"]);
     img.setAttribute(
       "src",
       "Sample Photos-2/Photographers ID Photos/" + photographers[p]["portrait"]
