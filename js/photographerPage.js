@@ -69,7 +69,7 @@ function loadCallbackpp(text) {
   frontPhoto.appendChild(source);
 
   let img = document.createElement("IMG");
-  img.setAttribute("alt", "Photo by " + photographer["name"]);
+  img.setAttribute("alt", "Photo of " + photographer["name"]);
   img.setAttribute(
     "src",
     "Sample Photos-2/Photographers ID Photos/" + photographer["portrait"]
@@ -106,6 +106,8 @@ function loadCallbackpp(text) {
       //create picture element
       let picture = document.createElement("PICTURE");
       picture.setAttribute("class", "photo");
+      picture.setAttribute("alt", pc["alt"] + ", closeup view" )
+      picture.setAttribute("tabindex", "0");
       photoCard.appendChild(picture);
       // srcset for picture
       let source = document.createElement("SOURCE");
@@ -173,6 +175,8 @@ function loadCallbackpp(text) {
     // create div with heart icon
     let likeIcon = document.createElement("DIV");
     likeIcon.setAttribute("class", "fa fa-heart");
+    likeIcon.setAttribute("aria-label", "likes");
+    likeIcon.setAttribute("tabindex", "0");
     likeIcon.addEventListener("click", incrementLikes);
     like.appendChild(likeIcon);
 

@@ -31,7 +31,7 @@ function loadCallback(text) {
     );
     photographerCard.appendChild(anchor);
 
-    let photographerMain = document.createElement("DIV");
+    let photographerMain = document.createElement("H2");
     photographerMain.setAttribute("class", "photographer-main");
     anchor.appendChild(photographerMain);
 
