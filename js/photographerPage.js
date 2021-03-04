@@ -55,12 +55,17 @@ function loadCallbackpp(text) {
     button.setAttribute("aria-label", "filter");
     button.setAttribute("class", "filter");
     button.innerHTML = "#" + photographer["tags"][i];
+    button.setAttribute(
+      "onclick",
+      "photoSort('" + photographer["tags"][i] + "')"
+    );
+
     tag.appendChild(button);
 
     let buttonSr = document.createElement("SPAN");
-      buttonSr.setAttribute("class", "sr-only");
-      buttonSr.innerHTML = "#" + photographer["tags"][i];
-      button.appendChild(buttonSr);
+    buttonSr.setAttribute("class", "sr-only");
+    buttonSr.innerHTML = "#" + photographer["tags"][i];
+    tag.appendChild(buttonSr);
   }
 
   // photographer image
@@ -107,11 +112,19 @@ function loadCallbackpp(text) {
     cardDate.setAttribute("class", "date-sort");
     photoCard.append(cardDate);
 
+    // create invisible div containing photo tag, used only for sorting
+    let photoTags = document.createElement("DIV");
+    photoTags.innerText = pc["tags"];
+    photoTags.style.display = "none";
+    photoTags.setAttribute("class", "photo-sort");
+    photoCard.append(photoTags);
+
+    //media factory - choose between photo and video
     if (pc["image"]) {
       //create picture element
       let picture = document.createElement("PICTURE");
       picture.setAttribute("class", "photo");
-      picture.setAttribute("alt", pc["alt"] + ", closeup view" )
+      picture.setAttribute("alt", pc["alt"] + ", closeup view");
       picture.setAttribute("tabindex", "0");
       photoCard.appendChild(picture);
       // srcset for picture
@@ -227,7 +240,7 @@ function loadCallbackpp(text) {
   //photographer fare per day
 
   photographerPrice = document.getElementById("price-pp");
-  photographerPrice. innerHTML = `${photographer["price"]}$ / Day`;
+  photographerPrice.innerHTML = `${photographer["price"]}$ / Day`;
 }
 
 function incrementLikes() {
@@ -306,6 +319,29 @@ const sortMedia = (sortby) => {
   //and refill it with the sorted cards
   for (i = 0; i < cards.length; i++) {
     portfolio.appendChild(cards[i]);
+  }
+};
+
+//last added
+const photoSort = (filter) => {
+  const photoCategories = document.getElementsByClassName("photo-sort");
+
+  // Push into keepPhoto only the cards that matches the filter
+  let keepPhoto = [];
+  for (i = 0; i < photoCategories.length; i++) {
+    if (photoCategories[i].innerText == filter) {
+      keepPhoto.push(photoCategories[i].parentNode);
+    }
+  }
+
+  // hide all the cards
+  let photoCards = document.getElementsByClassName("photo-card");
+  for (i = 0; i < photoCards.length; i++) {
+    photoCards[i].style.display = "none";
+  }
+  // and display only the ones I want to keep
+  for (i = 0; i < keepPhoto.length; i++) {
+    keepPhoto[i].style.display = "block";
   }
 };
 

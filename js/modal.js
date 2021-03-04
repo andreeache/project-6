@@ -13,9 +13,11 @@ const lastName = document.getElementById("last");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
 
+
 // launch modal function
 function launchModal() {
   modalbg.style.display = "block";
+  firstName.focus();
 }
 
 // Launch modal event
