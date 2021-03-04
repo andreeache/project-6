@@ -89,13 +89,17 @@ function loadCallback(text) {
       let button = document.createElement("BUTTON");
       button.setAttribute("aria-label", "filter");
       button.setAttribute("class", "filter filter-card");
+      button.setAttribute(
+        "onclick",
+        "filterSelection('" + photographers[p]["tags"][i] + "')"
+      );
       button.innerHTML = "#" + photographers[p]["tags"][i];
       categories.appendChild(button);
 
       let buttonSr = document.createElement("SPAN");
       buttonSr.setAttribute("class", "sr-only");
       buttonSr.innerHTML = "#" + photographers[p]["tags"][i];
-      button.appendChild(buttonSr);
+      categories.appendChild(buttonSr);
     }
   }
 }
