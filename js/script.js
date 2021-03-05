@@ -98,7 +98,7 @@ function loadCallback(text) {
 
       let buttonSr = document.createElement("SPAN");
       buttonSr.setAttribute("class", "sr-only");
-      buttonSr.innerHTML = "#" + photographers[p]["tags"][i];
+      buttonSr.innerHTML = "Tag";
       categories.appendChild(buttonSr);
     }
   }
