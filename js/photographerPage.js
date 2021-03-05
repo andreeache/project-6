@@ -147,6 +147,12 @@ function loadCallbackpp(text) {
         "openLightbox();currentSlide(" + String(currentPhoto) + ")"
       );
       picture.appendChild(img);
+
+      picture.addEventListener("keyup", function (event) {
+        if (event.key === "Enter") {
+          img.click();
+        }
+      });
     } else {
       // it's a video
       let video = document.createElement("VIDEO");
@@ -159,7 +165,16 @@ function loadCallbackpp(text) {
         "src",
         "Sample Photos-2/" + pc["photographerId"] + "/" + pc["video"] + "#t=0.1"
       );
+      source.setAttribute(
+        "onClick",
+        "openLightbox();currentSlide(" + String(currentPhoto) + ")"
+      );
       video.appendChild(source);
+      video.addEventListener("keyup", function (event) {
+        if (event.key === "Enter") {
+          source.click();
+        }
+      });
     }
 
     //create photo-card-details div, contains name and price
@@ -196,6 +211,11 @@ function loadCallbackpp(text) {
     likeIcon.setAttribute("aria-label", "likes");
     likeIcon.setAttribute("tabindex", "0");
     likeIcon.addEventListener("click", incrementLikes);
+    likeIcon.addEventListener("keyup", function (event) {
+      if (event.key === "Enter") {
+        likeIcon.click();
+      }
+    });
     like.appendChild(likeIcon);
 
     // add the photo to the lightbox too

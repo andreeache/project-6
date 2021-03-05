@@ -44,8 +44,3 @@ window.addEventListener("keydown", function (event) {
   }
 });
 
-// window.addEventListener('arrowLeft', function(event) {
-//   if (event.key === "ArrowLeft") {
-//     myLightbox.
-//   }
-// })
