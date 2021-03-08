@@ -13,7 +13,6 @@ const lastName = document.getElementById("last");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
 
-
 // launch modal function
 function launchModal() {
   modalbg.style.display = "block";
@@ -95,8 +94,8 @@ function validateForm() {
 }
 
 //Close modal with esc key
-window.addEventListener('keydown', function (event) {
-  if (event.key === 'Escape') {
-    modalbg.style.display = 'none'
+window.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    modalbg.style.display = "none";
   }
-})
+});

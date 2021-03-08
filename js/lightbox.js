@@ -14,7 +14,7 @@ function closeLightbox() {
 function currentSlide(n) {
   const myPhotos = document.getElementsByClassName("lightboxSlides");
 
-  for (i = 0; i < myPhotos.length; i++) {
+  for (let i = 0; i < myPhotos.length; i++) {
     if (i + 1 == n) {
       myPhotos[i].style.display = "block";
     } else {
@@ -43,4 +43,3 @@ window.addEventListener("keydown", function (event) {
     plusSlides(-1);
   }
 });
-
