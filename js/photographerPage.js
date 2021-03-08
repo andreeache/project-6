@@ -234,6 +234,7 @@ function loadCallbackpp(text) {
         "src",
         "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]
       );
+      lbImage.setAttribute("aria-label", pc["alt"]);
       lightboxSlide.appendChild(lbImage);
     } else {
       let video = document.createElement("VIDEO");
@@ -276,7 +277,7 @@ function sumLikes() {
 
   let sum = 0;
   // iterate the array and add each like number to the above sum
-  for (i = 0; i < likes.length; i++) {
+  for (let i = 0; i < likes.length; i++) {
     sum += parseInt(likes[i].innerText);
   }
 

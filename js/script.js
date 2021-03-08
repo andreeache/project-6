@@ -34,6 +34,8 @@ function loadCallback(text) {
     let photographerMain = document.createElement("H2");
     photographerMain.setAttribute("class", "photographer-main");
     anchor.appendChild(photographerMain);
+    photographerMain.setAttribute("aria-label", photographers[p]["name"]);
+    
 
     // Picture
     let picture = document.createElement("PICTURE");
