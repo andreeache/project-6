@@ -43,6 +43,7 @@ const ValidateEmail = (mail) => {
 };
 
 // submit function - validate all the fields
+// eslint-disable-next-line no-unused-vars
 function validateForm() {
   //assumed that all the fields are valid, will set it to false in case any of them is not
   let isFormValid = true;
@@ -99,5 +100,3 @@ window.addEventListener("keydown", function (event) {
     modalbg.style.display = "none";
   }
 });
-
-export default { validateForm };

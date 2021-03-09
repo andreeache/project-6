@@ -1,8 +1,9 @@
-/// dropdown, followed example from W3 website
+import { sortMedia } from "./photographerPage.js";
 
+// dropdown, followed example from W3 website
 /* Look for any elements with the class "dropdown-select": */
 const dropdownSelect = document.getElementsByClassName("dropdown-select");
-var i;
+let i;
 for (i = 0; i < dropdownSelect.length; i++) {
   createMasterDDElement(dropdownSelect[i]);
 }
@@ -32,7 +33,7 @@ function createMasterDDElement(ddSelect) {
 }
 
 function createDDElement(aParent, selElmnt, aTopParent) {
-  var j;
+  let j;
   for (j = 0; j < selElmnt.length; j++) {
     /* For each option in the original select element,
         create a new DIV that will act as an option item: */
@@ -44,7 +45,7 @@ function createDDElement(aParent, selElmnt, aTopParent) {
     c.addEventListener("click", function (e) {
       /* When an item is clicked, update the original select box,
             and the selected item: */
-      var y, i, k, s, h;
+      let i, s, h;
       s = this.parentNode.parentNode.getElementsByTagName("select")[0];
       h = this.parentNode.previousSibling;
       for (i = 0; i < s.length; i++) {
@@ -69,7 +70,7 @@ function createDDElement(aParent, selElmnt, aTopParent) {
 function closeAllSelect(elmnt) {
   /* A function that will close all select boxes in the document,
   except the current select box: */
-  var i;
+  let i;
   let arrNo = [];
   let x = document.getElementsByClassName("select-items");
   let y = document.getElementsByClassName("select-selected");
@@ -90,4 +91,3 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
-

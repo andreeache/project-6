@@ -35,7 +35,6 @@ function loadCallback(text) {
     photographerMain.setAttribute("class", "photographer-main");
     anchor.appendChild(photographerMain);
     photographerMain.setAttribute("aria-label", photographers[p]["name"]);
-    
 
     // Picture
     let picture = document.createElement("PICTURE");
@@ -108,7 +107,7 @@ function loadCallback(text) {
 
 loadJson("fisheyedata.json", loadCallback);
 
-const filterSelection = (filter) => {
+export const filterSelection = (filter) => {
   const categories = document.getElementsByClassName("filter-card");
 
   // Push into keepCard only the cards that matches the filter
@@ -129,5 +128,3 @@ const filterSelection = (filter) => {
     keepCard[i].style.display = "flex";
   }
 };
-
-export default filterSelection;

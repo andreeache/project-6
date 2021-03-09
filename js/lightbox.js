@@ -3,10 +3,12 @@ const myLightbox = document.getElementById("myLightbox");
 let currentPosition = 1;
 
 // Open the lightbox modal
+// eslint-disable-next-line no-unused-vars
 function openLightbox() {
   myLightbox.style.display = "block";
 }
 
+// eslint-disable-next-line no-unused-vars
 function closeLightbox() {
   myLightbox.style.display = "none";
 }
@@ -43,5 +45,3 @@ window.addEventListener("keydown", function (event) {
     plusSlides(-1);
   }
 });
-
-export default {openLightbox, closeLightbox}; 

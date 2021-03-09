@@ -1,7 +1,6 @@
 // load json
-
 function loadJson(file, callback) {
-  var rawFile = new XMLHttpRequest();
+  let rawFile = new XMLHttpRequest();
   rawFile.overrideMimeType("application/json");
   rawFile.open("GET", file, true);
   rawFile.onreadystatechange = function () {
@@ -16,7 +15,7 @@ function loadCallbackpp(text) {
   let data = JSON.parse(text);
   let media = data["media"];
   let photographers = data["photographers"];
-  var photographer;
+  let photographer;
 
   // get the parameter dictionary
   const urlParams = new URLSearchParams(window.location.search);
@@ -321,7 +320,7 @@ const sortByTitle = (a, b) => {
 
 // apply sorting; parameter has to be one of: Date, Popularity or Title
 // function will be called in dropdown.js
-const sortMedia = (sortby) => {
+export const sortMedia = (sortby) => {
   //transfrom html colection in an array
   let cards = [...document.getElementsByClassName("photo-card")];
   if (cards.length < 1) {
@@ -349,7 +348,7 @@ const sortMedia = (sortby) => {
 };
 
 //last added
-const photoSort = (filter) => {
+export const photoSort = (filter) => {
   const photoCategories = document.getElementsByClassName("photo-sort");
 
   // Push into keepPhoto only the cards that matches the filter
@@ -372,5 +371,3 @@ const photoSort = (filter) => {
 };
 
 loadJson("fisheyedata.json", loadCallbackpp);
-
-export default photoSort;
