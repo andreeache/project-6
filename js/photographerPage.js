@@ -42,6 +42,7 @@ function loadCallbackpp(text) {
   //add accesibility labels to the modal contact form
   const modalbg = document.querySelector(".bground");
   modalbg.setAttribute("aria-label", "Contact me " + photographer["name"]);
+  modalbg.setAttribute("aria-labelledby", "modal-photographer-name");
 
   // photographer location
   let location = document.getElementById("location-pp");
