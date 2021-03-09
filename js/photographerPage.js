@@ -39,6 +39,10 @@ function loadCallbackpp(text) {
   );
   photographerNameModal.innerText = photographer["name"];
 
+  //add accesibility labels to the modal contact form
+  const modalbg = document.querySelector(".bground");
+  modalbg.setAttribute("aria-label", "Contact me " + photographer["name"]);
+
   // photographer location
   let location = document.getElementById("location-pp");
   location.innerText = photographer["city"] + ", " + photographer["country"];
@@ -260,7 +264,7 @@ function loadCallbackpp(text) {
 
   //photographer fare per day
 
-  photographerPrice = document.getElementById("price-pp");
+  const photographerPrice = document.getElementById("price-pp");
   photographerPrice.innerHTML = `${photographer["price"]}$ / Day`;
 }
 
@@ -338,7 +342,7 @@ const sortMedia = (sortby) => {
   //empty the portfolio
   portfolio.innerHTML = "";
   //and refill it with the sorted cards
-  for (i = 0; i < cards.length; i++) {
+  for (let i = 0; i < cards.length; i++) {
     portfolio.appendChild(cards[i]);
   }
 };
@@ -349,7 +353,7 @@ const photoSort = (filter) => {
 
   // Push into keepPhoto only the cards that matches the filter
   let keepPhoto = [];
-  for (i = 0; i < photoCategories.length; i++) {
+  for (let i = 0; i < photoCategories.length; i++) {
     if (photoCategories[i].innerText == filter) {
       keepPhoto.push(photoCategories[i].parentNode);
     }
@@ -357,13 +361,15 @@ const photoSort = (filter) => {
 
   // hide all the cards
   let photoCards = document.getElementsByClassName("photo-card");
-  for (i = 0; i < photoCards.length; i++) {
+  for (let i = 0; i < photoCards.length; i++) {
     photoCards[i].style.display = "none";
   }
   // and display only the ones I want to keep
-  for (i = 0; i < keepPhoto.length; i++) {
+  for (let i = 0; i < keepPhoto.length; i++) {
     keepPhoto[i].style.display = "block";
   }
 };
 
 loadJson("fisheyedata.json", loadCallbackpp);
+
+export default photoSort;

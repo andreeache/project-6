@@ -43,3 +43,5 @@ window.addEventListener("keydown", function (event) {
     plusSlides(-1);
   }
 });
+
+export default {openLightbox, closeLightbox}; 

@@ -7,7 +7,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const modalClose = document.querySelectorAll(".close");
 
 //DOM form elements
-const contactForm = document.getElementById("contactform");
+// const contactForm = document.getElementById("contactform");
 const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
 const email = document.getElementById("email");
@@ -99,3 +99,5 @@ window.addEventListener("keydown", function (event) {
     modalbg.style.display = "none";
   }
 });
+
+export default { validateForm };

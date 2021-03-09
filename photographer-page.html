@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" class="ref">
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Fisheye Photographer</title>
@@ -50,9 +50,9 @@
         <div class="media-items">
             <div class="media-select-menu">
                 <label id="orderby">Order by</label>
-                <div class="dropdown-select" tabindex="0">
+                <div class="dropdown-select" tabindex="0" aria-label="Order by">
                     <select>
-                        <option  value="0">Popularity</option>
+                        <option value="0">Popularity</option>
                         <option value="1">Date</option>
                         <option value="2">Title</option>
                     </select>
@@ -75,7 +75,8 @@
         <!-- lightbox modal -->
 
         <div class="lightbox" id="myLightbox" aria-label="image close up view">
-            <span class="closelightbox cursor" onclick="closeLightbox()" aria-label="Close dialog" aria-modal="true" >&times;</span>
+            <span class="closelightbox cursor" onclick="closeLightbox()" aria-label="Close dialog"
+                aria-modal="true">&times;</span>
             <div class="lightbox-content" id="lightbox-content">
 
 
@@ -121,10 +122,10 @@
             </div>
         </div>
     </main>
-    <script src="js/dropdown.js"></script>
-    <script src="js/photographerPage.js"></script>
-    <script src="js/lightbox.js"></script>
-    <script src="js/modal.js"></script>
+    <script type="module" src="js/dropdown.js"></script>
+    <script type="module" src="js/photographerPage.js"></script>
+    <script type="module" src="js/lightbox.js"></script>
+    <script type="module" src="js/modal.js"></script>
 </body>
 
 </html>

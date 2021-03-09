@@ -113,7 +113,7 @@ const filterSelection = (filter) => {
 
   // Push into keepCard only the cards that matches the filter
   let keepCard = [];
-  for (i = 0; i < categories.length; i++) {
+  for (let i = 0; i < categories.length; i++) {
     if (categories[i].innerText == "#" + filter) {
       keepCard.push(categories[i].parentNode.parentNode);
     }
@@ -121,11 +121,13 @@ const filterSelection = (filter) => {
 
   // hide all the cards
   let cards = document.getElementsByClassName("photographer-card");
-  for (i = 0; i < cards.length; i++) {
+  for (let i = 0; i < cards.length; i++) {
     cards[i].style.display = "none";
   }
   // and display only the ones I want to keep
-  for (i = 0; i < keepCard.length; i++) {
+  for (let i = 0; i < keepCard.length; i++) {
     keepCard[i].style.display = "flex";
   }
 };
+
+export default filterSelection;
