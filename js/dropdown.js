@@ -29,6 +29,7 @@ function createMasterDDElement(ddSelect) {
     this.nextSibling.classList.toggle("select-hide");
     this.classList.toggle("select-arrow-active");
   });
+ 
   return topSelectedItem;
 }
 
@@ -42,6 +43,7 @@ function createDDElement(aParent, selElmnt, aTopParent) {
     }
     let c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
+    // eslint-disable-next-line no-unused-vars
     c.addEventListener("click", function (e) {
       /* When an item is clicked, update the original select box,
             and the selected item: */
@@ -91,3 +93,10 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+
+window.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeAllSelect() ;
+  
+  }
+});

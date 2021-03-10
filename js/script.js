@@ -41,19 +41,26 @@ function loadCallback(text) {
     picture.setAttribute("class", "front-photo");
     photographerMain.appendChild(picture);
 
+    let myPhoto;
+    if (photographers[p]["thumbnail"]) {
+      myPhoto =
+        "Sample Photos-2/" +
+        photographers[p]["id"] +
+        "/" +
+        photographers[p]["thumbnail"];
+    } else {
+      myPhoto =
+        "Sample Photos-2/Photographers ID Photos/" +
+        photographers[p]["portrait"];
+    }
+
     let source = document.createElement("SOURCE");
-    source.setAttribute(
-      "srcset",
-      "Sample Photos-2/Photographers ID Photos/" + photographers[p]["portrait"]
-    );
+    source.setAttribute("srcset", myPhoto);
     picture.appendChild(source);
 
     let img = document.createElement("IMG");
     img.setAttribute("alt", photographers[p]["alt"]);
-    img.setAttribute(
-      "src",
-      "Sample Photos-2/Photographers ID Photos/" + photographers[p]["portrait"]
-    );
+    img.setAttribute("src", myPhoto);
     picture.appendChild(img);
 
     let name = document.createElement("DIV");
