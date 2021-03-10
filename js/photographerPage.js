@@ -320,7 +320,7 @@ const sortByTitle = (a, b) => {
 
 // apply sorting; parameter has to be one of: Date, Popularity or Title
 // function will be called in dropdown.js
- const sortMedia = (sortby) => {
+const sortMedia = (sortby) => {
   //transfrom html colection in an array
   let cards = [...document.getElementsByClassName("photo-card")];
   if (cards.length < 1) {
@@ -348,7 +348,8 @@ const sortByTitle = (a, b) => {
 };
 
 //last added
- const photoSort = (filter) => {
+// eslint-disable-next-line no-unused-vars
+const photoSort = (filter) => {
   const photoCategories = document.getElementsByClassName("photo-sort");
 
   // Push into keepPhoto only the cards that matches the filter

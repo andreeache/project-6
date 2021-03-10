@@ -58,6 +58,7 @@ function createDDElement(aParent, selElmnt, aTopParent) {
           p.removeChild(aTopParent);
           p.removeChild(aParent);
           h = createMasterDDElement(p);
+          // eslint-disable-next-line no-undef
           sortMedia(this.innerText);
           break;
         }

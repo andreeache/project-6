@@ -23,7 +23,8 @@
         "tagline": "Capturing Complex Composition",
         "price": 250,
         "portrait": "EllieRoseWilkens.jpg",
-        "alt": "Portrait of Ellie Rose Wilkens"
+        "alt": "Portrait of Ellie Rose Wilkens",
+        "thumbnail": "Architecture_Horseshoe.jpg"
       },
       {
         "name": "Tracy Galindo",
@@ -34,7 +35,8 @@
         "tagline": "Freelance photographer",
         "price": 500,
         "portrait": "TracyGalindo.jpg",
-        "alt": "Portrait of Tracy Galindo"
+        "alt": "Portrait of Tracy Galindo",
+        "thumbnail": "Fashion_Urban_Jungle.jpg"
       },
       {
         "name": "Nabeel Bradford",
@@ -45,7 +47,8 @@
         "tagline": "Always moving forward",
         "price": 350,
         "portrait": "NabeelBradford.jpg",
-        "alt": "Portrait Nabeel Bradford"
+        "alt": "Portrait Nabeel Bradford",
+        "thumbnail": "Travel_Outdoor_Baths.jpg"
       },
       {
         "name": "Rhode Dubois",
@@ -56,7 +59,8 @@
         "tagline": "Making memories",
         "price": 275,
         "portrait": "RhodeDubois.jpg",
-        "alt": "Portrait of Rhode Dubois"
+        "alt": "Portrait of Rhode Dubois",
+        "thumbnail": "Fashion_Melody_Red_on_Stripes.jpg"
       },
       {
         "name": "Marcel Nikolic",
@@ -67,7 +71,8 @@
         "tagline": "Finding the next big photo",
         "price": 300,
         "portrait": "MarcelNikolic.jpg",
-        "alt": "Portrait of Marcel Nikolic"
+        "alt": "Portrait of Marcel Nikolic",
+        "thumbnail": "Travel_Tower.jpg"
       }
     ],
     "media": [
