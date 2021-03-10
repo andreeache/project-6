@@ -920,7 +920,7 @@ input[data-error]::after {
 .closelightbox {
   color: #911c1c;
   position: absolute;
-  top: 10vh;
+  top: 10px;
   right: 25px;
   font-size: 35px;
   font-weight: bold;

@@ -1,3 +1,4 @@
+import { mediaFactory } from "./mediaFactory.js";
 // load json
 function loadJson(file, callback) {
   let rawFile = new XMLHttpRequest();
@@ -13,7 +14,7 @@ function loadJson(file, callback) {
 
 function loadCallbackpp(text) {
   let data = JSON.parse(text);
-  let media = data["media"];
+  let jsonMedia = data["media"];
   let photographers = data["photographers"];
   let photographer;
 
@@ -59,10 +60,10 @@ function loadCallbackpp(text) {
     button.setAttribute("aria-label", "filter");
     button.setAttribute("class", "filter");
     button.innerHTML = "#" + photographer["tags"][i];
-    button.setAttribute(
-      "onclick",
-      "photoSort('" + photographer["tags"][i] + "')"
-    );
+    // eslint-disable-next-line no-unused-vars
+    button.addEventListener("click", function (_) {
+      photoSort(photographer["tags"][i]);
+    });
 
     tag.appendChild(button);
 
@@ -93,16 +94,16 @@ function loadCallbackpp(text) {
   // generating portfolio
   const portfolio = document.getElementById("portfolio");
 
-  // iterate all elements in media
-  let currentPhoto = 0;
-  for (let f = 0; f < media.length; f++) {
-    let pc = media[f];
+  // iterate all elements in media section of the json
+  let currentCardIndex = 0;
+  for (let f = 0; f < jsonMedia.length; f++) {
+    let pc = jsonMedia[f];
     // filter by photographer ID
     if (pc["photographerId"] != urlParams.get("photographer_id")) {
       continue;
     }
 
-    currentPhoto += 1;
+    currentCardIndex += 1;
 
     //photocard
     let photoCard = document.createElement("DIV");
@@ -124,62 +125,8 @@ function loadCallbackpp(text) {
     photoCard.append(photoTags);
 
     //media factory - choose between photo and video
-    if (pc["image"]) {
-      //create picture element
-      let picture = document.createElement("PICTURE");
-      picture.setAttribute("class", "photo");
-      picture.setAttribute("alt", pc["alt"] + ", closeup view");
-      picture.setAttribute("tabindex", "0");
-      photoCard.appendChild(picture);
-      // srcset for picture
-      let source = document.createElement("SOURCE");
-      source.setAttribute(
-        "srcset",
-        "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]
-      );
-      picture.appendChild(source);
-
-      //create img element
-      let img = document.createElement("IMG");
-      img.setAttribute(
-        "src",
-        "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]
-      );
-      img.setAttribute("class", "hover-shadow cursor");
-      img.setAttribute(
-        "onclick",
-        "openLightbox();currentSlide(" + String(currentPhoto) + ")"
-      );
-      picture.appendChild(img);
-
-      picture.addEventListener("keyup", function (event) {
-        if (event.key === "Enter") {
-          img.click();
-        }
-      });
-    } else {
-      // it's a video
-      let video = document.createElement("VIDEO");
-      video.controls = true;
-      video.setAttribute("class", "video");
-      photoCard.appendChild(video);
-      //srcset for video
-      let source = document.createElement("SOURCE");
-      source.setAttribute(
-        "src",
-        "Sample Photos-2/" + pc["photographerId"] + "/" + pc["video"] + "#t=0.1"
-      );
-      source.setAttribute(
-        "onClick",
-        "openLightbox();currentSlide(" + String(currentPhoto) + ")"
-      );
-      video.appendChild(source);
-      video.addEventListener("keyup", function (event) {
-        if (event.key === "Enter") {
-          source.click();
-        }
-      });
-    }
+    let media = new mediaFactory(pc, currentCardIndex);
+    photoCard.appendChild(media.generate());
 
     //create photo-card-details div, contains name and price
     let pcDetails = document.createElement("DIV");
@@ -320,7 +267,7 @@ const sortByTitle = (a, b) => {
 
 // apply sorting; parameter has to be one of: Date, Popularity or Title
 // function will be called in dropdown.js
-const sortMedia = (sortby) => {
+export const sortMedia = (sortby) => {
   //transfrom html colection in an array
   let cards = [...document.getElementsByClassName("photo-card")];
   if (cards.length < 1) {
@@ -348,7 +295,6 @@ const sortMedia = (sortby) => {
 };
 
 //last added
-// eslint-disable-next-line no-unused-vars
 const photoSort = (filter) => {
   const photoCategories = document.getElementsByClassName("photo-sort");
 

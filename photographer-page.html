@@ -100,8 +100,9 @@
                     <div class="modal-photographer-name" id="modal-photographer-name"></div>
                     <form name="contactform" id="contactform" method="get" onsubmit="return validateForm();">
                         <div class="formData" data-error="Please enter 2+ characters for name field">
-                            <label class="modal-text" for="first"> First Name</label>
-                            <input class="text-control" type="text" id="first" name="first" aria-label="First Name">
+                            <label class="modal-text" for="first" aria-label="First Name"> First Name</label>
+                            <input class="text-control" type="text" id="first" name="first" aria-label="First Name"
+                                aria-describedby="first" aria-labelledby="first">
                         </div>
                         <div class="formData" data-error="Please enter 2+ characters for name field">
                             <label class="modal-text" for="last">Last Name</label>
@@ -124,8 +125,8 @@
             </div>
         </div>
     </main>
-    <script  src="js/dropdown.js"></script>
-    <script  src="js/photographerPage.js"></script>
+    <script type="module" src="js/dropdown.js"></script>
+    <script type="module" src="js/photographerPage.js"></script>
     <script src="js/lightbox.js"></script>
     <script src="js/modal.js"></script>
 </body>

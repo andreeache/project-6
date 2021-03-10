@@ -1,0 +1,95 @@
+// Media Factory with classes
+
+class mediaImage {
+  constructor(jsonDict, currentIndex) {
+    this.jsondict = jsonDict;
+    this.currentIndex = currentIndex;
+  }
+
+  generate() {
+    //create picture element
+    let picture = document.createElement("PICTURE");
+    picture.setAttribute("class", "photo");
+    picture.setAttribute("alt", this.jsondict["alt"] + ", closeup view");
+    picture.setAttribute("tabindex", "0");
+    // srcset for picture
+    let source = document.createElement("SOURCE");
+    source.setAttribute(
+      "srcset",
+      "Sample Photos-2/" +
+        this.jsondict["photographerId"] +
+        "/" +
+        this.jsondict["image"]
+    );
+    picture.appendChild(source);
+
+    //create img element
+    let img = document.createElement("IMG");
+    img.setAttribute(
+      "src",
+      "Sample Photos-2/" +
+        this.jsondict["photographerId"] +
+        "/" +
+        this.jsondict["image"]
+    );
+    img.setAttribute("class", "hover-shadow cursor");
+    img.setAttribute(
+      "onclick",
+      "openLightbox();currentSlide(" + String(this.currentIndex) + ")"
+    );
+    picture.appendChild(img);
+
+    picture.addEventListener("keyup", function (event) {
+      if (event.key === "Enter") {
+        img.click();
+      }
+    });
+
+    return picture;
+  }
+}
+
+class mediaVideo {
+  constructor(jsonDict, currentIndex) {
+    this.jsondict = jsonDict;
+    this.currentIndex = currentIndex;
+  }
+
+  generate() {
+    let video = document.createElement("VIDEO");
+    video.controls = true;
+    video.setAttribute("class", "video");
+    //srcset for video
+    let source = document.createElement("SOURCE");
+    source.setAttribute(
+      "src",
+      "Sample Photos-2/" +
+        this.jsondict["photographerId"] +
+        "/" +
+        this.jsondict["video"] +
+        "#t=0.1"
+    );
+    source.setAttribute(
+      "onClick",
+      "openLightbox();currentSlide(" + String(this.currentIndex) + ")"
+    );
+    video.appendChild(source);
+    video.addEventListener("keyup", function (event) {
+      if (event.key === "Enter") {
+        source.click();
+      }
+    });
+
+    return video;
+  }
+}
+
+export class mediaFactory {
+  constructor(jsonDict, currentIndex) {
+    if (jsonDict["image"]) {
+      return new mediaImage(jsonDict, currentIndex);
+    } else {
+      return new mediaVideo(jsonDict, currentIndex);
+    }
+  }
+}

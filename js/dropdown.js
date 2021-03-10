@@ -1,3 +1,5 @@
+import { sortMedia } from "./photographerPage.js";
+
 // dropdown, followed example from W3 website
 /* Look for any elements with the class "dropdown-select": */
 const dropdownSelect = document.getElementsByClassName("dropdown-select");
@@ -28,11 +30,13 @@ function ddKeyDown(e) {
   e.stopPropagation();
 }
 
-function ddKeysOn(e) {
+// eslint-disable-next-line no-unused-vars
+function ddKeysOn(_) {
   window.addEventListener("keydown", ddKeyDown);
 }
 
-function ddKeysOff(e) {
+// eslint-disable-next-line no-unused-vars
+function ddKeysOff(_) {
   window.removeEventListener("keydown", ddKeyDown);
 }
 
