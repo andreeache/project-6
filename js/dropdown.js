@@ -1,5 +1,3 @@
-import { sortMedia } from "./photographerPage.js";
-
 // dropdown, followed example from W3 website
 /* Look for any elements with the class "dropdown-select": */
 const dropdownSelect = document.getElementsByClassName("dropdown-select");
@@ -29,7 +27,7 @@ function createMasterDDElement(ddSelect) {
     this.nextSibling.classList.toggle("select-hide");
     this.classList.toggle("select-arrow-active");
   });
- 
+
   return topSelectedItem;
 }
 
@@ -96,7 +94,6 @@ document.addEventListener("click", closeAllSelect);
 
 window.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
-    closeAllSelect() ;
-  
+    closeAllSelect();
   }
 });

@@ -114,7 +114,8 @@ function loadCallback(text) {
 
 loadJson("fisheyedata.json", loadCallback);
 
-export const filterSelection = (filter) => {
+ // eslint-disable-next-line no-unused-vars
+ const filterSelection = (filter) => {
   const categories = document.getElementsByClassName("filter-card");
 
   // Push into keepCard only the cards that matches the filter
