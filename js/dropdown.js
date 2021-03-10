@@ -6,6 +6,36 @@ for (i = 0; i < dropdownSelect.length; i++) {
   createMasterDDElement(dropdownSelect[i]);
 }
 
+function openCloseDD(e) {
+  /* When the select box is clicked, close any other select boxes,
+  and open/close the current select box: */
+  e.stopPropagation();
+  window.topItem.nextSibling.classList.toggle("select-hide");
+  window.topItem.classList.toggle("select-arrow-active");
+}
+
+function ddKeyDown(e) {
+  if (e.key === "ArrowDown") {
+    console.log("Down");
+  } else if (e.key === "ArrowUp") {
+    console.log("up");
+  } else if (e.key === "Enter") {
+    openCloseDD(e);
+  } else {
+    return;
+  }
+  e.preventDefault();
+  e.stopPropagation();
+}
+
+function ddKeysOn(e) {
+  window.addEventListener("keydown", ddKeyDown);
+}
+
+function ddKeysOff(e) {
+  window.removeEventListener("keydown", ddKeyDown);
+}
+
 function createMasterDDElement(ddSelect) {
   const selElmnt = ddSelect.getElementsByTagName("select")[0];
   /* For each element, create a new DIV that will act as the selected item: */
@@ -14,19 +44,16 @@ function createMasterDDElement(ddSelect) {
   topSelectedItem.innerHTML =
     selElmnt.options[selElmnt.selectedIndex].innerHTML;
   ddSelect.appendChild(topSelectedItem);
+  window.topItem = topSelectedItem;
   /* For each element, create a new DIV that will contain the option list: */
   let restOfList = document.createElement("DIV");
   restOfList.setAttribute("class", "select-items select-hide");
   createDDElement(restOfList, selElmnt, topSelectedItem);
   ddSelect.appendChild(restOfList);
 
-  topSelectedItem.addEventListener("click", function (e) {
-    /* When the select box is clicked, close any other select boxes,
-    and open/close the current select box: */
-    e.stopPropagation();
-    this.nextSibling.classList.toggle("select-hide");
-    this.classList.toggle("select-arrow-active");
-  });
+  ddSelect.addEventListener("click", openCloseDD);
+  ddSelect.addEventListener("focusin", ddKeysOn);
+  ddSelect.addEventListener("focusout", ddKeysOff);
 
   return topSelectedItem;
 }
@@ -43,21 +70,17 @@ function createDDElement(aParent, selElmnt, aTopParent) {
     c.innerHTML = selElmnt.options[j].innerHTML;
     // eslint-disable-next-line no-unused-vars
     c.addEventListener("click", function (e) {
-      /* When an item is clicked, update the original select box,
-            and the selected item: */
-      let i, s, h;
-      s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-      h = this.parentNode.previousSibling;
-      for (i = 0; i < s.length; i++) {
+      // the hidden select box
+      let s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+      for (let i = 0; i < s.length; i++) {
         if (s.options[i].innerHTML == this.innerHTML) {
           s.selectedIndex = i;
-          h.innerHTML = this.innerHTML;
 
           /* recreate all the divs */
           let p = aTopParent.parentNode;
           p.removeChild(aTopParent);
           p.removeChild(aParent);
-          h = createMasterDDElement(p);
+          createMasterDDElement(p);
           // eslint-disable-next-line no-undef
           sortMedia(this.innerText);
           break;
