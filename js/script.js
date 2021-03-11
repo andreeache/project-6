@@ -76,16 +76,19 @@ function loadCallback(text) {
     let location = document.createElement("DIV");
     location.setAttribute("class", "location");
     location.innerHTML = photographers[p]["city"];
+    location.setAttribute("tabindex", "0");
     details.appendChild(location);
 
     let description = document.createElement("DIV");
     description.setAttribute("class", "description");
     description.innerHTML = photographers[p]["tagline"];
+    description.setAttribute("tabindex", "0");
     details.appendChild(description);
 
     let price = document.createElement("DIV");
     price.setAttribute("class", "price");
     price.innerHTML = "$" + photographers[p]["price"] + "/day";
+    price.setAttribute("tabindex", "0");
     details.appendChild(price);
 
     // Categories
@@ -95,8 +98,7 @@ function loadCallback(text) {
 
     for (let i = 0; i < photographers[p]["tags"].length; i++) {
       let button = document.createElement("BUTTON");
-      button.setAttribute("aria-label", "filter");
-      button.setAttribute("class", "filter filter-card");
+      button.setAttribute("class", "filter filter-card", "btn");
       button.setAttribute(
         "onclick",
         "filterSelection('" + photographers[p]["tags"][i] + "')"
@@ -107,7 +109,7 @@ function loadCallback(text) {
       let buttonSr = document.createElement("SPAN");
       buttonSr.setAttribute("class", "sr-only");
       buttonSr.innerHTML = "Tag";
-      categories.appendChild(buttonSr);
+      button.appendChild(buttonSr);
     }
   }
 }

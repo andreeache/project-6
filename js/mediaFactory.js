@@ -11,6 +11,7 @@ class mediaImage {
     let picture = document.createElement("PICTURE");
     picture.setAttribute("class", "photo");
     picture.setAttribute("alt", this.jsondict["alt"] + ", closeup view");
+    picture.setAttribute("aria-label", this.jsondict["alt"] + ", closeup view");
     picture.setAttribute("tabindex", "0");
     // srcset for picture
     let source = document.createElement("SOURCE");

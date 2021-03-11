@@ -57,7 +57,7 @@ function loadCallbackpp(text) {
 
   for (let i = 0; i < photographer["tags"].length; i++) {
     let button = document.createElement("BUTTON");
-    button.setAttribute("aria-label", "filter");
+    button.setAttribute("sr-only", "Tag");
     button.setAttribute("class", "filter");
     button.innerHTML = "#" + photographer["tags"][i];
     // eslint-disable-next-line no-unused-vars
@@ -131,6 +131,7 @@ function loadCallbackpp(text) {
     //create photo-card-details div, contains name and price
     let pcDetails = document.createElement("DIV");
     pcDetails.setAttribute("class", "photo-card-details");
+    pcDetails.setAttribute("tabindex", "0");
     photoCard.appendChild(pcDetails);
 
     // create div photo-description, contains photo's name
@@ -143,6 +144,7 @@ function loadCallbackpp(text) {
     let photoPrice = document.createElement("DIV");
     photoPrice.setAttribute("class", "photo-price");
     photoPrice.innerHTML = pc["price"] + "$";
+    photoPrice.setAttribute("tabindex", "0");
     pcDetails.appendChild(photoPrice);
 
     // create div for like section, contains nr of likes and heart icon
@@ -154,6 +156,7 @@ function loadCallbackpp(text) {
     let nrOfLikes = document.createElement("DIV");
     nrOfLikes.setAttribute("class", "number-of-like");
     nrOfLikes.innerHTML = pc["likes"];
+    nrOfLikes.setAttribute("tabindex", "0");
     like.appendChild(nrOfLikes);
 
     // create div with heart icon

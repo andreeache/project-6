@@ -28,12 +28,12 @@
         <div class="photographer-info">
             <div class="info-details">
                 <!-- photographer name on photographer page -->
-                <h1 class="photographer-name-pp" id="photographer-name-pp"></h1>
+                <h1 class="photographer-name-pp" id="photographer-name-pp" tabindex="0"></h1>
                 <div class="photographer-details">
                     <!-- location-pp location on the photographer page -->
-                    <div class="location-pp" id="location-pp"></div>
+                    <div class="location-pp" id="location-pp" tabindex="0" ></div>
                     <!-- description-pp - description on the photographer page -->
-                    <div class="description-pp" id="description-pp"></div>
+                    <div class="description-pp" id="description-pp" tabindex="0"></div>
                 </div>
                 <br>
                 <div class="photographer-categories-pp">
@@ -74,7 +74,7 @@
 
         <!-- lightbox modal -->
 
-        <div class="lightbox" id="myLightbox" aria-label="image close up view">
+        <div class="lightbox" id="myLightbox" role="dialog" id="dialog-1" aria-label="image close up view">
             <span class="closelightbox cursor" onclick="closeLightbox()" aria-label="Close dialog"
                 aria-modal="true">&times;</span>
             <div class="lightbox-content" id="lightbox-content">
@@ -92,7 +92,7 @@
         </div>
 
         <!-- contact form -->
-        <div class="bground">
+        <div class="bground" role="dialog"  id="dialog-1">
             <div class="content">
                 <span class="close" aria-label="Close Contact Form"></span>
                 <div class="modal-body">
