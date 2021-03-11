@@ -17,10 +17,19 @@ function openCloseDD(e) {
 }
 
 function ddKeyDown(e) {
+  const selElmnt = document.getElementsByTagName("select")[0];
+
   if (e.key === "ArrowDown") {
-    console.log("Down");
+    if (selElmnt.selectedIndex < selElmnt.length - 1) {
+      selElmnt.selectedIndex += 1;
+      recreateAllDropdownDivs(window.topItem, window.topItem.nextSibling);
+    }
   } else if (e.key === "ArrowUp") {
-    console.log("up");
+    if (selElmnt.selectedIndex > 0) {
+      const selElmnt = document.getElementsByTagName("select")[0];
+      selElmnt.selectedIndex -= 1;
+      recreateAllDropdownDivs(window.topItem, window.topItem.nextSibling);
+    }
   } else if (e.key === "Enter") {
     openCloseDD(e);
   } else {
@@ -79,14 +88,7 @@ function createDDElement(aParent, selElmnt, aTopParent) {
       for (let i = 0; i < s.length; i++) {
         if (s.options[i].innerHTML == this.innerHTML) {
           s.selectedIndex = i;
-
-          /* recreate all the divs */
-          let p = aTopParent.parentNode;
-          p.removeChild(aTopParent);
-          p.removeChild(aParent);
-          createMasterDDElement(p);
-          // eslint-disable-next-line no-undef
-          sortMedia(this.innerText);
+          recreateAllDropdownDivs(aTopParent, aParent);
           break;
         }
       }
@@ -94,6 +96,16 @@ function createDDElement(aParent, selElmnt, aTopParent) {
     aParent.appendChild(c);
   }
 }
+
+const recreateAllDropdownDivs = (aTopParent, aParent) => {
+  /* recreate all the dropdown related divs */
+  let p = aTopParent.parentNode;
+  p.removeChild(aTopParent);
+  p.removeChild(aParent);
+  createMasterDDElement(p);
+  // eslint-disable-next-line no-undef
+  sortMedia(window.topItem.innerText);
+};
 
 function closeAllSelect(elmnt) {
   /* A function that will close all select boxes in the document,
