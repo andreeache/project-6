@@ -26,7 +26,6 @@ function ddKeyDown(e) {
     }
   } else if (e.key === "ArrowUp") {
     if (selElmnt.selectedIndex > 0) {
-      const selElmnt = document.getElementsByTagName("select")[0];
       selElmnt.selectedIndex -= 1;
       recreateAllDropdownDivs(window.topItem, window.topItem.nextSibling);
     }

@@ -188,6 +188,7 @@ function loadCallbackpp(text) {
         "src",
         "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]
       );
+      lbImage.setAttribute("tabindex", "0");
       lbImage.setAttribute("aria-label", pc["alt"]);
       lightboxSlide.appendChild(lbImage);
     } else {

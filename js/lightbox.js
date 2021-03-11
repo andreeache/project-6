@@ -1,16 +1,28 @@
 // lightbox
 const myLightbox = document.getElementById("myLightbox");
 let currentPosition = 1;
+const test = document.getElementById("test");
+const logo = document.getElementById("logo");
 
 // Open the lightbox modal
 // eslint-disable-next-line no-unused-vars
 function openLightbox() {
   myLightbox.style.display = "block";
+  test.style.display = "none";
+  test.setAttribute("aria-hidden", "true");
+  logo.style.display = "none";
+  logo.setAttribute("aria-hidden", "true");
+
 }
 
 // eslint-disable-next-line no-unused-vars
 function closeLightbox() {
   myLightbox.style.display = "none";
+  test.style.display = "block";
+  test.setAttribute("aria-hidden", "false");
+  logo.style.display = "block";
+  logo.setAttribute("aria-hidden", "false");
+  
 }
 
 function currentSlide(n) {
