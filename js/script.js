@@ -108,7 +108,7 @@ function loadCallback(text) {
 
       let buttonSr = document.createElement("SPAN");
       buttonSr.setAttribute("class", "sr-only");
-      buttonSr.innerHTML = "Tag";
+      buttonSr.innerText = "Tag";
       button.appendChild(buttonSr);
     }
   }
@@ -116,14 +116,14 @@ function loadCallback(text) {
 
 loadJson("fisheyedata.json", loadCallback);
 
- // eslint-disable-next-line no-unused-vars
- const filterSelection = (filter) => {
+// eslint-disable-next-line no-unused-vars
+const filterSelection = (filter) => {
   const categories = document.getElementsByClassName("filter-card");
 
   // Push into keepCard only the cards that matches the filter
   let keepCard = [];
   for (let i = 0; i < categories.length; i++) {
-    if (categories[i].innerText == "#" + filter) {
+    if (categories[i].innerText.slice(1, -3) == filter) {
       keepCard.push(categories[i].parentNode.parentNode);
     }
   }
