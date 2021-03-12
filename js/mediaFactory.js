@@ -58,7 +58,7 @@ class mediaVideo {
 
   generate() {
     let video = document.createElement("VIDEO");
-    video.controls = true;
+    video.controls = false;
     video.setAttribute("class", "video");
     video.setAttribute("alt", this.jsondict["alt"] + ", closeup view");
     video.setAttribute("aria-label", this.jsondict["alt"] + ", closeup view");
@@ -72,7 +72,7 @@ class mediaVideo {
         this.jsondict["video"] +
         "#t=0.1"
     );
-    source.setAttribute(
+    video.setAttribute(
       "onClick",
       "openLightbox();currentSlide(" + String(this.currentIndex) + ")"
     );
