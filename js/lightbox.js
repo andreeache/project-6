@@ -12,7 +12,6 @@ function openLightbox() {
   test.setAttribute("aria-hidden", "true");
   logo.style.display = "none";
   logo.setAttribute("aria-hidden", "true");
-
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -22,7 +21,6 @@ function closeLightbox() {
   test.setAttribute("aria-hidden", "false");
   logo.style.display = "block";
   logo.setAttribute("aria-hidden", "false");
-  
 }
 
 function currentSlide(n) {
@@ -50,7 +48,7 @@ function plusSlides(n) {
 //Close lightbox with esc key
 window.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
-    myLightbox.style.display = "none";
+    closeLightbox();
   } else if (event.key === "ArrowRight") {
     plusSlides(1);
   } else if (event.key === "ArrowLeft") {
