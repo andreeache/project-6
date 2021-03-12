@@ -14,7 +14,7 @@
 
 
 <body>
-    <header class="logo" id="logopp">
+    <header class="logo" id="logo">
         <a href="./index.html">
             <picture class="home">
                 <source srcset="logo.png">
@@ -50,10 +50,9 @@
 
         <div class="media-items">
             <div class="media-select-menu">
-                <label  id="orderby">Order by</label>
+                <label id="orderby" for="selectOption">Order by</label>
                 <div class="dropdown-select" tabindex="0" aria-label="Order by">
-                    <label for="Order by" ></label>
-                    <select>
+                    <select id="selectOption" name="options" >
                         <option label="Popularity" value="0">Popularity</option>
                         <option label="Date" value="1">Date</option>
                         <option label="Title" value="2">Title</option>
@@ -95,7 +94,7 @@
         </div>
 
         <!-- contact form -->
-        <div class="bground" role="dialog" >
+        <div class="bground" role="dialog"  id="dialog1">
             <div class="content">
                 <span class="close" aria-label="Close Contact Form"></span>
                 <div class="modal-body">

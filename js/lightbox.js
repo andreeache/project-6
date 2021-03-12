@@ -2,7 +2,7 @@
 const myLightbox = document.getElementById("myLightbox");
 let currentPosition = 1;
 const test = document.getElementById("test");
-const logo = document.getElementById("logopp");
+const logo = document.getElementById("logo");
 
 // Open the lightbox modal
 // eslint-disable-next-line no-unused-vars
