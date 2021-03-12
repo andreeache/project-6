@@ -38,6 +38,7 @@ class mediaImage {
       "onclick",
       "openLightbox();currentSlide(" + String(this.currentIndex) + ")"
     );
+    img.setAttribute("alt", this.jsondict["alt"]);
     picture.appendChild(img);
 
     picture.addEventListener("keyup", function (event) {
@@ -66,12 +67,13 @@ class mediaVideo {
     let source = document.createElement("SOURCE");
     source.setAttribute(
       "src",
-      "Sample Photos-2/" +
+      "Sample%20Photos-2/" +
         this.jsondict["photographerId"] +
         "/" +
         this.jsondict["video"] +
         "#t=0.1"
     );
+    source.setAttribute("alt", this.jsondict["alt"]);
     video.setAttribute(
       "onClick",
       "openLightbox();currentSlide(" + String(this.currentIndex) + ")"

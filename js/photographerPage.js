@@ -79,7 +79,7 @@ function loadCallbackpp(text) {
   let source = document.createElement("SOURCE");
   source.setAttribute(
     "srcset",
-    "Sample%20Photos-2/Photographers ID Photos/" + photographer["portrait"]
+    "Sample%20Photos-2/Photographers%20ID%20Photos/" + photographer["portrait"]
   );
   frontPhoto.appendChild(source);
 
@@ -87,7 +87,7 @@ function loadCallbackpp(text) {
   img.setAttribute("alt", photographer["alt"]);
   img.setAttribute(
     "src",
-    "Sample%20Photos-2/Photographers ID Photos/" + photographer["portrait"]
+    "Sample%20Photos-2/Photographers%20ID%20Photos/" + photographer["portrait"]
   );
   frontPhoto.appendChild(img);
 
@@ -183,7 +183,7 @@ function loadCallbackpp(text) {
     if (pc["image"]) {
       // create img element
       let lbImage = document.createElement("IMG");
-      lbImage.setAttribute("alt", photographer["name"]);
+      lbImage.setAttribute("alt", pc["alt"]);
       lbImage.setAttribute(
         "src",
         "Sample%20Photos-2/" + pc["photographerId"] + "/" + pc["image"]
@@ -199,10 +199,15 @@ function loadCallbackpp(text) {
       let source = document.createElement("SOURCE");
       source.setAttribute(
         "src",
-        "Sample%20Photos-2/" + pc["photographerId"] + "/" + pc["video"] + "#t=0.1"
+        "Sample%20Photos-2/" +
+          pc["photographerId"] +
+          "/" +
+          pc["video"] +
+          "#t=0.1"
       );
       video.appendChild(source);
       video.setAttribute("aria-label", pc["alt"]);
+      video.setAttribute("alt", pc["alt"]);
     }
 
     // created lightbox-text, contains photo's name

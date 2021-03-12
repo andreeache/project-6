@@ -50,7 +50,7 @@ function loadCallback(text) {
         photographers[p]["thumbnail"];
     } else {
       myPhoto =
-        "Sample%20Photos-2/Photographers ID Photos/" +
+        "Sample%20Photos-2/Photographers%20ID%20Photos/" +
         photographers[p]["portrait"];
     }
 
