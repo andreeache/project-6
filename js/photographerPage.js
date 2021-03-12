@@ -79,7 +79,7 @@ function loadCallbackpp(text) {
   let source = document.createElement("SOURCE");
   source.setAttribute(
     "srcset",
-    "Sample Photos-2/Photographers ID Photos/" + photographer["portrait"]
+    "Sample%20Photos-2/Photographers ID Photos/" + photographer["portrait"]
   );
   frontPhoto.appendChild(source);
 
@@ -87,7 +87,7 @@ function loadCallbackpp(text) {
   img.setAttribute("alt", photographer["alt"]);
   img.setAttribute(
     "src",
-    "Sample Photos-2/Photographers ID Photos/" + photographer["portrait"]
+    "Sample%20Photos-2/Photographers ID Photos/" + photographer["portrait"]
   );
   frontPhoto.appendChild(img);
 
@@ -186,7 +186,7 @@ function loadCallbackpp(text) {
       lbImage.setAttribute("alt", photographer["name"]);
       lbImage.setAttribute(
         "src",
-        "Sample Photos-2/" + pc["photographerId"] + "/" + pc["image"]
+        "Sample%20Photos-2/" + pc["photographerId"] + "/" + pc["image"]
       );
       lbImage.setAttribute("tabindex", "0");
       lbImage.setAttribute("aria-label", pc["alt"]);
@@ -199,7 +199,7 @@ function loadCallbackpp(text) {
       let source = document.createElement("SOURCE");
       source.setAttribute(
         "src",
-        "Sample Photos-2/" + pc["photographerId"] + "/" + pc["video"] + "#t=0.1"
+        "Sample%20Photos-2/" + pc["photographerId"] + "/" + pc["video"] + "#t=0.1"
       );
       video.appendChild(source);
       video.setAttribute("aria-label", pc["alt"]);

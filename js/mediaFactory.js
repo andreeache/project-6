@@ -17,7 +17,7 @@ class mediaImage {
     let source = document.createElement("SOURCE");
     source.setAttribute(
       "srcset",
-      "Sample Photos-2/" +
+      "Sample%20Photos-2/" +
         this.jsondict["photographerId"] +
         "/" +
         this.jsondict["image"]
@@ -28,7 +28,7 @@ class mediaImage {
     let img = document.createElement("IMG");
     img.setAttribute(
       "src",
-      "Sample Photos-2/" +
+      "Sample%20Photos-2/" +
         this.jsondict["photographerId"] +
         "/" +
         this.jsondict["image"]

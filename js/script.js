@@ -44,13 +44,13 @@ function loadCallback(text) {
     let myPhoto;
     if (photographers[p]["thumbnail"]) {
       myPhoto =
-        "Sample Photos-2/" +
+        "Sample%20Photos-2/" +
         photographers[p]["id"] +
         "/" +
         photographers[p]["thumbnail"];
     } else {
       myPhoto =
-        "Sample Photos-2/Photographers ID Photos/" +
+        "Sample%20Photos-2/Photographers ID Photos/" +
         photographers[p]["portrait"];
     }
 
