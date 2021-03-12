@@ -60,6 +60,8 @@ class mediaVideo {
     let video = document.createElement("VIDEO");
     video.controls = true;
     video.setAttribute("class", "video");
+    video.setAttribute("alt", this.jsondict["alt"] + ", closeup view");
+    video.setAttribute("aria-label", this.jsondict["alt"] + ", closeup view");
     //srcset for video
     let source = document.createElement("SOURCE");
     source.setAttribute(

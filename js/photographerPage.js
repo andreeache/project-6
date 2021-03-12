@@ -202,6 +202,7 @@ function loadCallbackpp(text) {
         "Sample Photos-2/" + pc["photographerId"] + "/" + pc["video"] + "#t=0.1"
       );
       video.appendChild(source);
+      video.setAttribute("aria-label", pc["alt"]);
     }
 
     // created lightbox-text, contains photo's name
