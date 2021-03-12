@@ -123,7 +123,7 @@ const filterSelection = (filter) => {
   // Push into keepCard only the cards that matches the filter
   let keepCard = [];
   for (let i = 0; i < categories.length; i++) {
-    if (categories[i].innerText.slice(1, -3) == filter) {
+    if (categories[i].textContent.slice(1, -3) == filter) {
       keepCard.push(categories[i].parentNode.parentNode);
     }
   }
