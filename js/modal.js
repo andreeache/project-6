@@ -12,11 +12,18 @@ const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
+const wrapperm = document.getElementById("wrapper");
+const logom = document.getElementById("logo");
+
 
 // launch modal function
 function launchModal() {
   modalbg.style.display = "block";
   firstName.focus();
+  wrapperm.style.display = "none";
+  wrapperm.setAttribute("aria-hidden", "true");
+  logom.style.display = "none";
+  logom.setAttribute("aria-hidden", "true");
 }
 
 // Launch modal event
@@ -25,6 +32,10 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 //hide modal function
 function hideModal() {
   modalbg.style.display = "none";
+  wrapperm.style.display = "block";
+  wrapperm.setAttribute("aria-hidden", "false");
+  logom.style.display = "block";
+  logom.setAttribute("aria-hidden", "false");
 }
 
 //   hide modal event
@@ -92,6 +103,7 @@ function validateForm() {
 
   hideModal();
   return false;
+  
 }
 
 //Close modal with esc key

@@ -1,4 +1,4 @@
-// Media Factory with classes
+// Media Factory with classes - factory method pattern 
 
 class mediaImage {
   constructor(jsonDict, currentIndex) {

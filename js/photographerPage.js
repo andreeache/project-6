@@ -21,7 +21,7 @@ function loadCallbackpp(text) {
   // get the parameter dictionary
   const urlParams = new URLSearchParams(window.location.search);
 
-  // iterate all elements in photographers in order to find the right photographer
+  // iterate all elements in photographers in order to find the right photographer from the url page
   for (let i = 0; i < photographers.length; i++) {
     if (photographers[i]["id"] == urlParams.get("photographer_id")) {
       photographer = photographers[i];
